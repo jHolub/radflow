@@ -1,0 +1,7 @@
+#activeModel{
+    background-color: yellow;
+}
+#model_parameters td {
+    width: 200px; 
+    padding: 3px;
+}

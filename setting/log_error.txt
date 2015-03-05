@@ -1,0 +1,159 @@
+October 4, 2014, 10:15 am - Error is occured. USER ID:1 DATE: 
+
+
+October 4, 2014, 10:15 am - Error is occured. USER ID:1 DATE: 
+
+
+October 4, 2014, 10:18 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:18:26
+
+
+October 4, 2014, 10:19 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:19:57
+
+
+October 4, 2014, 10:20 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:20:13
+
+
+October 4, 2014, 10:20 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:20:18
+
+
+October 4, 2014, 10:20 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:20:31
+
+
+October 4, 2014, 10:24 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:24:58
+
+
+October 4, 2014, 10:25 am - Error is occured. USER ID:1 DATE: 2014-10-04 10:25:36
+
+
+October 4, 2014, 1:44 pm - Error is occured. USER ID:1 DATE: 2014-10-04 13:44:45
+
+
+October 4, 2014, 1:45 pm - Error is occured. USER ID:1 DATE: 2014-10-04 13:45:06
+
+
+October 4, 2014, 2:09 pm - Error is occured. USER ID:1 DATE: 2014-10-04 14:09:31
+
+
+October 4, 2014, 3:07 pm - Error is occured. USER ID:1 DATE: 2014-10-04 15:07:14
+
+
+October 5, 2014, 4:27 pm - Error is occured. USER ID:1 DATE: 2014-10-05 16:27:07
+
+
+October 11, 2014, 5:50 pm - Error is occured. USER ID:1 DATE: 2014-10-11 17:50:15
+
+
+October 12, 2014, 9:09 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:09 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:10 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+October 12, 2014, 9:11 am - Variable is not accessible for initialization. NAME: source; VALUE: čšěčš  41 ,method: ControllerService::__construct
+
+
+November 25, 2014, 10:29 am - Error is occured. USER ID:1 DATE: 2014-11-25 10:29:55
+
+
+November 25, 2014, 10:29 am - Error is occured. USER ID:1 DATE: 2014-11-25 10:29:56
+
+
+November 25, 2014, 10:36 am - Error is occured. USER ID:1 DATE: 2014-11-25 10:36:48
+
+
+November 25, 2014, 8:04 pm - Error is occured. USER ID:1 DATE: 2014-11-25 20:04:33
+
+
+December 21, 2014, 12:45 pm - Error is occured. USER ID:1 DATE: 2014-12-21 12:45:41
+
+
+February 2, 2015, 9:56 am - Error is occured. USER ID:1 DATE: 2015-02-02 09:56:40
+
+
+February 2, 2015, 9:57 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:07 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:08 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
+February 2, 2015, 10:08 am - Variable is not accessible for initialization. NAME: source; VALUE: MO_4_PRED  41 ,method: ControllerService::__construct
+
+
