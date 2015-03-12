@@ -14,25 +14,9 @@
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jqplot/plugins/jqplot.highlighter.min.js"></script>
 
-<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/BesselFc.js"></script>
-<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/Stehfest.js"></script>
-<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/fc.js"></script>
+<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/vyvoj/BesselFc.js"></script>
+<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/vyvoj/Stehfest.js"></script>
+<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/vyvoj/RealDimensionless.js"></script>
+<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/vyvoj/ploting.js"></script>
 
-<script>
 
-    var s_input = new Array(<?php echo $this->model->graphData['s']; ?>);
-
-    var t_input = new Array(<?php echo $this->model->graphData['t']; ?>);
-
-    $(document).ready(function() {
-
-        dimData = realToDimensionless(t_input, s_input);
-        
-        td = createTd(dimData[1][0], dimData[dimData.length - 1][0]);
-
-        modelData = stehfest(td);
-        
-        ploting(modelData, dimData, 'chart');
-
-    });
-</script>

@@ -18,3 +18,5 @@
  <?php endif;?>
 
 <a href='<?php echo \GLOBALVAR\ROOT; ?>?core=contact'>CONTACT</a>
+
+<a href='<?php echo \GLOBALVAR\ROOT; ?>?core=vyvoj'>Vyvoj</a>

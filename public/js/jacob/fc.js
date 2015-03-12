@@ -189,6 +189,8 @@ function ploting(data, data_observ, points) {  console.log(data);
                 }                
             },
             yaxis: {
+                //renderer: $.jqplot.LogAxisRenderer,
+                //ticks: [0.01,0.1,1,10, 100],
                 min: 0,
                 //max: 20,
                 label: "s",

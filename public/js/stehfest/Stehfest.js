@@ -56,6 +56,44 @@ function realToDimensionless(t, s) {
     return data;
 }
 
+// t = time,  return array[td]
+function timeToDimensionless(t) {
+
+    td = new Array();
+    
+    Q = parseFloat(document.getElementById('RECHARGE').value);
+    T = parseFloat(document.getElementById('TRANSMISSIVITY').value);
+    rv = parseFloat(document.getElementById('RADIUS_WELL').value);
+    S = parseFloat(document.getElementById('STORATIVITY').value);
+
+    for (l = 0; l < t.length; l++) {
+
+// bezrozmerny cas 
+        td[l] = ((T * t[l]) / ((rv * rv) * S));
+    }
+
+    return td;
+}
+
+//  s = pressure drop, return array sd
+function drawdownToDimensionless(s) {
+
+    sd = new Array();
+    
+    Q = parseFloat(document.getElementById('RECHARGE').value);
+    T = parseFloat(document.getElementById('TRANSMISSIVITY').value);
+    rv = parseFloat(document.getElementById('RADIUS_WELL').value);
+    S = parseFloat(document.getElementById('STORATIVITY').value);
+
+    for (l = 0; l < s.length; l++) {
+ 
+// bezrozmerne snizeni          
+        sd[l] = (((2 * Math.PI * T) / Q) * s[l]);
+    }
+    return sd;
+}
+
+
 function createTd(first_time, last_time) {
 
     if(first_time == 0 || first_time < 0){        
@@ -82,14 +120,29 @@ function createTd(first_time, last_time) {
 //Laplace transform function, skin effect, wellbore storage
 function F(p) {
 
-    C = document.getElementById('WELL_STORAGE').value;        // storage well
-    S = document.getElementById('SKIN').value;        // skin effect
+    Cd = document.getElementById('WELL_STORAGE').value;        // storage well
+    W = document.getElementById('SKIN').value;        // skin effect
+/*
+// odhad Cd    
+    S = parseFloat(document.getElementById('STORATIVITY').value); 
+    r = parseFloat(document.getElementById('RADIUS_WELL').value);
+    C = 0.0879;
+    Cd = (C / (2 * Math.PI * r * r * S));
+   
+    document.getElementById('WELL_STORAGE').value = Cd;
 
+// odhad W
+    QQ = 0.0023;
+    TT = 0.0012379;
+    ii = 3.37;
+    W = (1 / 0.87) * ((( 2 * Math.PI * TT * ii)/ QQ) - (1.0127 * (Math.log(Cd) / Math.LN10)) - 1.0232);
+    document.getElementById('SKIN').value = W;
+*/
     // AGARWAL: Investigation of Wellbore_Storage and skin effect
-    div = p * (Math.sqrt(p) * BesselK1(Math.sqrt(p)) + C * p * (BesselK0(Math.sqrt(p)) + S * Math.sqrt(p) * BesselK1(Math.sqrt(p))));
+    div = p * (Math.sqrt(p) * BesselK1(Math.sqrt(p)) + Cd * p * (BesselK0(Math.sqrt(p)) + W * Math.sqrt(p) * BesselK1(Math.sqrt(p))));
 
     // bezrozmerne snizeni v Laplasove prostoru
-    hd = (BesselK0(Math.sqrt(p)) + (S * Math.sqrt(p) * BesselK1(Math.sqrt(p)))) / div;
+    hd = (BesselK0(Math.sqrt(p)) + (W * Math.sqrt(p) * BesselK1(Math.sqrt(p)))) / div;
 
     return hd;
 }
@@ -112,7 +165,7 @@ function F_1(p){
 
     return hd;
 }
-
+// return bezrozmerny cas a bezrozmenrne snizeni
 function stehfest(td) {
 
     //STEHFEST TERMS 
@@ -141,11 +194,11 @@ function stehfest(td) {
     return result;
 }
 
-function ploting(model, data) {
+function ploting(model, data, id) {
 
-    document.getElementById('chart').innerHTML = "";
+    document.getElementById(id).innerHTML = "";
 
-    $.jqplot('chart', [data, model], {
+    $.jqplot(id, [data, model], {
         title: 'Swd',
         grid: {
             drawGridLines: true,
@@ -189,20 +242,158 @@ function ploting(model, data) {
         ],
         axes: {
             xaxis: {
-            //    ticks: [1, 10, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000],
+                ticks: [0.001,0.1,0.3,1, 10, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000],
                 tickOptions: {
-                    formatString: '%.1e'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                    //formatString: '%.1e'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 },
                 renderer: $.jqplot.LogAxisRenderer
             },
             yaxis: {
                 min: 0,
-                max: 30,
+                max: 20,
                 label: "s",
                 tickOptions: {
                     fontSize: '12px',
                     formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 }
+            }
+        }
+    });
+}
+
+
+function plotingReal(model, data, id) {
+
+    document.getElementById(id).innerHTML = "";
+
+    $.jqplot(id, [data, model], {
+        title: 's vs t',
+        grid: {
+            drawGridLines: true,
+            backgroundColor: "#F7FCFD",
+            gridLineColor: '#E8E8E8',
+            gridLineWidth: 1,
+            borderWidth: 0.1,
+            shadow: false
+        },
+        seriesDefaults: {
+            markerOptions: {
+                size: 7,
+                shadow: false
+            },
+            shadow: false
+        },
+        highlighter: {
+            sizeAdjust: 10,
+            tooltipLocation: 'n',
+            tooltipAxes: 'y',
+            useAxesFormatters: false,
+            showTooltip: true,
+            tooltipFade: true
+        },
+        cursor: {
+            show: true,
+            tooltipLocation: 'se',
+            zoom: false,
+            dblClickReset: true,
+            showVerticalLine: true,
+            showHorizontalLine: true,
+            fontSize: '13px'
+        },
+        legend: {
+            show: true,
+            location: 'en'
+        },
+        series: [
+            {label: 'Cerpaci zkouska', isDragable: false, color: "blue", lineWidth: 2, markerOptions: {size: 3, shadow: false}, shadow: false},
+            {label: 'Modelovana data', isDragable: false, color: "red", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false}
+        ],
+        axes: {
+            xaxis: {
+                ticks: [0.01,0.05,0.1,0.5,1, 10, 100, 500, 1000, 5000],
+                tickOptions: {
+                   formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                },
+                renderer: $.jqplot.LogAxisRenderer
+            },
+            yaxis: {
+                min: 0,
+                max: 10,
+                label: "s",
+                tickOptions: {
+                    fontSize: '12px',
+                    formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                }
+            }
+        }
+    });
+}
+
+function plotingLogLog(model, data, id) {
+
+    document.getElementById(id).innerHTML = "";
+
+    $.jqplot(id, [data, model], {
+        title: 'log log sd vs ts/wd',
+        grid: {
+            drawGridLines: true,
+            backgroundColor: "#F7FCFD",
+            gridLineColor: '#E8E8E8',
+            gridLineWidth: 1,
+            borderWidth: 0.1,
+            shadow: false
+        },
+        seriesDefaults: {
+            markerOptions: {
+                size: 7,
+                shadow: false
+            },
+            shadow: false
+        },
+        highlighter: {
+            sizeAdjust: 10,
+            tooltipLocation: 'n',
+            tooltipAxes: 'y',
+            useAxesFormatters: false,
+            showTooltip: true,
+            tooltipFade: true
+        },
+        cursor: {
+            show: true,
+            tooltipLocation: 'se',
+            zoom: false,
+            dblClickReset: true,
+            showVerticalLine: true,
+            showHorizontalLine: true,
+            fontSize: '13px'
+        },
+        legend: {
+            show: true,
+            location: 'en'
+        },
+        series: [
+            {label: 'Cerpaci zkouska', isDragable: false, color: "blue", lineWidth: 2, markerOptions: {size: 3, shadow: false}, shadow: false},
+            {label: 'Modelovana data', isDragable: false, color: "red", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false}
+        ],
+        axes: {
+            xaxis: {
+                ticks: [0.01,0.05,0.1,0.5,1, 10, 100, 500, 1000, 5000,10000,100000,1000000],
+                tickOptions: {
+                   formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                },
+                renderer: $.jqplot.LogAxisRenderer
+            },
+            yaxis: {
+                  ticks: [0.01,0.1,1,10,100],
+                  min:0.1, 
+                  max:100,
+                  label: "sd",
+                  tickOptions: {
+                      fontSize: '13px',
+                      textColor: "black",
+                      formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                  },
+                  renderer: $.jqplot.LogAxisRenderer
             }
         }
     });

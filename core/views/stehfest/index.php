@@ -44,13 +44,13 @@
     <table>
         <tr>
             <td>
-                <label>SKIN EFFECT S:</label>
+                <label>SKIN EFFECT Wd:</label>
             </td>
             <td>
                 <input id='SKIN' name='SKIN' type='text' value="<?php $this->write($this->model->sourceData['SKIN']) ?>" >
             </td>
             <td>
-                <label>WELL STORAGE C:</label>
+                <label>WELL STORAGE Cd:</label>
             </td>
             <td>
                 <input id='WELL_STORAGE' name='WELL_STORAGE' type='text' value="<?php $this->write($this->model->sourceData['WELL_STORAGE']) ?>">
@@ -81,13 +81,30 @@
         </td> 
         <td>
             <button onclick="redraw()">REDRAW</button>
-        </td>    
+        </td>  
+        <td>
+            <label>Nash–Sutcliffe model efficiency coefficient:</label>
+        </td> 
+        <td>
+            <input id="NS" type="text" disabled="disable"><button onclick="matching()">MATCHING</button>
+        </td>        
     </tr>
 </table>
 
+<div>
+   td/Wd 
+    <div id="chart2" style="width: 1200px; height: 1000px;"></div>
+</div>
+
+<div>
+    
+    <div id="chart1" style="width: 1200px; height: 1000px;"></div>
+</div>
 
 <div id='border_charts'>
-
+    dimensionless
     <div id="chart"></div>
 
 </div>
+
+
