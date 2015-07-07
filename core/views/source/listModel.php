@@ -1,34 +1,34 @@
 
-<table id='model_table'>
+<table class="table table-striped">
 
     <tr>
 
-        <th>NUMBER</th><th>NAME</th><th>ACTION</th><th>ACTION</th><th>ACTION</th>  
+        <th>ORDER</th><th>NAME</th><th>ACTION</th><th>ACTION</th><th>ACTION</th>  
     </tr>
 
-    <?php for ($i = 0; $i < count($this->model->list); $i++): ?>
+    <?php foreach ($this->var_('list') as $key => $list):?>
+        
+        <tr <?php if ($this->var_('activeSource') == $list['name']): ?> id='activeModel' <?php endif; ?>>
 
-        <tr <?php if ($this->model->getActiveSource() == $this->model->list[$i]): ?> id='activeModel' <?php endif; ?>>
-
             <td>
-                <?php echo $i + 1; ?>
+                <?php echo $key + 1 . "."; ?>
             </td>
             <td>
-                <?php $this->write($this->model->list[$i]); ?>
+                <?php echo $list['name']; ?>
             </td>
             <td>
-                <a class='select' href='<?php echo \GLOBALVAR\ROOT; ?>/?core=source&action=setSource&source=<?php $this->write($this->model->list[$i]); ?>' >SELECT</a>
+                <a href='<?php $this->link(['action'=>'setSource','source'=>$list['name']]); ?>' >SELECT</a>
             </td>
             <td>
-                <a href='<?php echo \GLOBALVAR\ROOT ?>/?core=source&action=delSource&source=<?php $this->write($this->model->list[$i]); ?>'>DELETE</a>
+                <a href='<?php $this->link(['action'=>'delSource','source'=>$list['name']]); ?>'>DELETE</a>
             </td>
             <td>
-                <?php if($this->model->list[$i] == $this->model->getActiveSource()):?>
-                    <a href='<?php echo \GLOBALVAR\ROOT ?>/?core=source&render=edit&source=<?php $this->write($this->model->list[$i]); ?>'>EDIT</a>
+                <?php if($list['name'] == $this->var_('activeSource')):?>
+                    <a href='<?php $this->link(['render'=>'edit','source'=>$list['name']]); ?>'>EDIT</a>
                 <?php endif;?>    
             </td>
         </tr>
 
-    <?php endfor; ?>
+    <?php endforeach; ?>
 
 </table>

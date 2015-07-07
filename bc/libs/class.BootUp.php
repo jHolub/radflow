@@ -15,21 +15,11 @@ class BootUp {
                 $class = $_GET['core']."Control";
 
                 $this->control = new $class();
-                
-                $this->view = $this->control->getViewer();
 
-                $this->view->core = $_GET['core'];
-  
-//  Detect An Ajax Request                
-                if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
-                {
-                    echo json_encode($this->control->getResponse());
-                    exit;
-                }
-                
+                $this->control->view->core = $_GET['core'];
             }else{
     
-               // URLService::getError('Controller not exist. CLASS: ' . __CLASS__ );
+                URLService::getError();
             }
         } else {
             

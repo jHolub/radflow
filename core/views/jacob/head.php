@@ -18,12 +18,12 @@
 
 <script>
     
-    var s = new Array(<?php echo $this->model->graphData['s'];?>);
+    var s = new Array(<?php $this->print_(['graphData','s']);?>);
     
-    var t = new Array(<?php echo $this->model->graphData['t'];?>);
+    var t = new Array(<?php $this->print_(['graphData','t']);?>);
     
-    var s_observ = new Array(<?php echo $this->model->graphDataObserv['s'];?>);
+    var s_observ = new Array(<?php $this->print_(['graphDataObserv','s']);?>);
     
-    var t_observ = new Array(<?php echo $this->model->graphDataObserv['t'];?>);
+    var t_observ = new Array(<?php $this->print_(['graphDataObserv','t']);?>);
 
 </script>

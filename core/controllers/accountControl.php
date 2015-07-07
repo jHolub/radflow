@@ -2,18 +2,22 @@
 
 class accountControl extends ControllerService{
     
-    public $msg;
-    
     public function __construct(){        
         
            parent::__construct($this);     
     }
     
-// handle: processing form (especially POST)    
-    public function handle_login($post){
+    public function action_main(){
         
-        $email = $post['email_user'];
-        $pass = $post['password'];
+        return[];
+    } 
+
+
+// handle: processing form (especially POST)    
+    public function action_login(){
+        
+        $email = $this->post['email_user'];
+        $pass = $this->post['password'];
         
         $row = accountData::getAccountData($email);    //pg_fetch_array($res); 
             if(!$row){
@@ -40,16 +44,16 @@ class accountControl extends ControllerService{
                 
             }
             
-            return true;        
+            return [];        
     }
  
-    public function handle_register($post){
+    public function action_register(){
           
          
-        $email = $post['email_user'];
-        $password = $post['password'];
+        $email = $this->post['email_user'];
+        $password = $this->post['password'];
             
-            if($password !== $post['passwordVerify']){
+            if($password !== $this->post['passwordVerify']){
 
 		$this->msg = 'The password and confirmation password do not match.';
 		return false;
@@ -70,7 +74,7 @@ class accountControl extends ControllerService{
             }
 
         $this->msg = ' Successful sign in.';
-        return true;  
+        return [];  
         
     }
     

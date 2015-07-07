@@ -2,68 +2,53 @@
 <b>
     Well hydraulic parameters
 </b>
-<br>
-<br>
-<table id="model_parameters">
 
-    <form action="<?php echo \GLOBALVAR\ROOT . "/?core=source&handle=saveParametrs&render=edit"; ?>" method="post">
-
-        <tr>
-            <td>
+<form action="<?php $this->link(['action' => 'saveParametrs', 'render' => 'edit']); ?>" method="post">
+    <div class="row">
+        <div class="col-sm-4">      
+            <div class="form-group">
                 <label for='STORATIVITY'>STORATIVITY []</label>
-            </td>
-            <td>
-                <input id= "STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->write($this->model->sourceData['STORATIVITY']) ?>" >               
-            </td>
-            <td>
-                <label for='TRANSMISSIVITY'>TRANSMISSIVITY [m2/s] </label>
-            </td>
-            <td>
-                <input type="text" name="TRANSMISSIVITY" value="<?php $this->write($this->model->sourceData['TRANSMISSIVITY']) ?>" >          
-            </td>
-        </tr>
+                <input class="form-control" id= "STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']); ?>" >               
 
-        <tr>
-            <td>
-                <label for='RECHARGE'>RECHARGE [m3/s]</label>     
-            </td>
-            <td>
-                <input type="text" name="RECHARGE" value="<?php $this->write($this->model->sourceData['RECHARGE']) ?>" > 
-            </td> 
-            <td>
                 <label for='WELL_DISTANCE'>DISTANCE OBSERVATION WELL [m]</label>  
-            </td> 
-            <td>
-                <input type="text" name="WELL_DISTANCE" value="<?php $this->write($this->model->sourceData['WELL_DISTANCE']) ?>" >  
-            </td>            
-        </tr> 
+                <input class="form-control" type="text" name="WELL_DISTANCE" value="<?php $this->print_(['sourceData', 'WELL_DISTANCE']); ?>" > 
 
-        <tr>
-            <td>
-                <label for='RADIUS_WELL'>RADIUS_WELL [m]</label>
-            </td>
-            <td>
-                <input type="text" name="RADIUS_WELL" value="<?php $this->write($this->model->sourceData['RADIUS_WELL']) ?>" >
-            </td> 
-            <td>
-                <label for='SKIN'>SKIN EFFECT []</label>
-            </td> 
-            <td>
-                <input type="text" name="SKIN" value="<?php $this->write($this->model->sourceData['SKIN']) ?>" >
-            </td>           
-        </tr>                
-        <tr>
-            <td>
                 <label for='WELL_STORAGE'>WELLBORE STORAGE []</label>
-            </td>
-            <td>
-                <input type="text" name="WELL_STORAGE" value="<?php $this->write($this->model->sourceData['WELL_STORAGE']) ?>" >
-            </td>
-        <tr>
-            <td>
-                <input type="submit" value="SAVE" >
-            </td>
-        </tr>
-    </form>
+                <input class="form-control" type="text" name="WELL_STORAGE" value="<?php $this->print_(['sourceData', 'WELL_STORAGE']); ?>" >
 
-</table>    
+            </div>
+        </div>
+
+        <div class="col-sm-4">      
+            <div class="form-group">
+                <label for='TRANSMISSIVITY'>TRANSMISSIVITY [m2/s] </label>
+                <input class="form-control" type="text" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']); ?>" >   
+
+                <label for='RADIUS_WELL'>RADIUS_WELL [m]</label>
+                <input class="form-control" type="text" name="RADIUS_WELL" value="<?php $this->print_(['sourceData', 'RADIUS_WELL']); ?>" >
+
+            </div>
+        </div>
+
+        <div class="col-sm-4">      
+            <div class="form-group">
+                <label for='RECHARGE'>RECHARGE [m3/s]</label>
+                <input class="form-control" type="text" name="RECHARGE" value="<?php $this->print_(['sourceData', 'RECHARGE']); ?>" > 
+
+                <label for='SKIN'>SKIN EFFECT []</label>
+                <input class="form-control" type="text" name="SKIN" value="<?php $this->print_(['sourceData', 'SKIN']); ?>" >
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <input  class="btn btn-default" type="submit" value="SAVE" >
+
+</form>

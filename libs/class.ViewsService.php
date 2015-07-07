@@ -3,16 +3,14 @@
 class ViewsService {
 
 // Initialization in Class BootUp.php    
-    public $core;    
-    public $model;
+    public $core;
     public $render;
-    public $user;
+    protected $user;
+    public $msg;
 
-    public function __construct($control) {
+    public function __construct($user) {
 
-        $this->user = new UserService();
-
-        $this->model = $control;
+        $this->user = $user;
     }
 
 // render(string - name of included file, string or array(string) - permission rules)
@@ -59,16 +57,75 @@ class ViewsService {
         }
     }
 
-    public function link($anchor){
+    function print_($key) {
         
-        if(!strpos('core', $anchor)){
-        
-            $anchor = "core=" . $this->core . "&" . $anchor;
+        if (is_array($key)) {
+            
+            $response = $this->response;
+            
+            for($i = 0; $i < (count($key) - 1); $i++){
+                
+                if(isset($response[$key[$i]])){
+                    
+                    $response = $response[$key[$i]];
+                };
+            };
+            
+            if(isset($response[$key[count($key) - 1]])){ echo htmlspecialchars($response[$key[count($key) - 1]]);}
+            
+        } else {       
+
+            if (isset($this->response[$key])) {
+
+                echo htmlspecialchars($this->response[$key]);
+            }
         }
-        
-        echo "href= '" . \GLOBALVAR\ROOT . "?" . $anchor . "'";
     }
-    
+
+    function var_($key) {
+
+        if (is_array($key)) {
+            
+            $response = $this->response;
+            
+            for($i = 0; $i < (count($key) - 1); $i++){
+                
+                if(isset($response[$key[$i]])){
+                    
+                    $response = $response[$key[$i]];
+                };
+            };
+            
+            if(isset($response[$key[count($key) - 1]])){ return $response[$key[count($key) - 1]];}
+            
+        } else {
+            
+            if (isset($this->response[$key])) {
+
+                return $this->response[$key];
+            }
+        }
+    }
+
+    public function getFormHead($anchor) {
+
+        $head = "";
+
+        $anchor['core'] = isset($anchor['core']) ? $anchor['core'] : $this->core;
+
+        foreach ($anchor as $key => $value) {
+
+            $head = $head . "<input type='hidden' id=" . $key . " name=" . $key . " value=" . $value . ">";
+        }
+
+        echo $head;
+    }
+
+    public function link($anchor) {
+
+        echo Routing::getLink($anchor, $this->core);
+    }
+
     public function render_header() {
 
         if (file_exists(\GLOBALVAR\VIEWS_PATH . '/' . $this->core . '/header.php')) {
@@ -92,13 +149,13 @@ class ViewsService {
     }
 
     public function render_foot() {
-        
-        if(file_exists(\GLOBALVAR\VIEWS_PATH . '/' . $this->core . '/foot.php')){
-            
-            include \GLOBALVAR\VIEWS_PATH . '/' . $this->core . '/foot.php';            
-        }else{
-            
-            include \GLOBALVAR\BASE_PATH . '/req/foot.php';            
+
+        if (file_exists(\GLOBALVAR\VIEWS_PATH . '/' . $this->core . '/foot.php')) {
+
+            include \GLOBALVAR\VIEWS_PATH . '/' . $this->core . '/foot.php';
+        } else {
+
+            include \GLOBALVAR\BASE_PATH . '/req/foot.php';
         }
     }
 
@@ -110,6 +167,11 @@ class ViewsService {
     public function render_webHead() {
 
         include \GLOBALVAR\VIEWS_PATH . '/' . $this->core . '/head.php';
+    }
+
+    public function get_msg() {
+
+        echo htmlspecialchars($this->msg);
     }
 
 }

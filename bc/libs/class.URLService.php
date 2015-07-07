@@ -10,9 +10,9 @@ class URLService{
             
     }
     
-    static public function getError($text = ''){
+    static public function getError(){
 
-        ErrorLogHandling::register("Error is occured." . $text . " USER ID:". SessionService::getInstance()->get('userId') ." DATE: ". date("F j, Y, g:i a"));
+        ErrorLogHandling::register("Error is occured. USER ID:". SessionService::getInstance()->get('userId') ." DATE: ". date("Y-m-d H:i:s"));
 
         if(file_exists(\GLOBALVAR\CONTROLLERS_PATH . '/errorControl.php')){
         

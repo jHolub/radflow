@@ -2,15 +2,6 @@
 
 class sourceControl extends ControllerService {
 
-    protected $msg;
-    
-    public $source;
-    public $sourceData;
-    // helper if saved data is from observation well 
-    public $observData = 0;    
-
-    private $activeSource;
-    
     public function __construct() {
 
         parent::__construct($this);
@@ -20,15 +11,28 @@ class sourceControl extends ControllerService {
             // presmerovani na prihlaseni     
             URLService::redirect();
         }
+    }
 
-        $this->list = $this->getListModels();
+    public function action_main() {
+        $lists = $this->getListModels();
 
-        $this->activeSource = SessionService::getInstance()->get('sourceName');
-        
-        if($this->activeSource){
-            
-            $this->sourceData = sourceData::getSourceData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));
+        $activeSource = SessionService::getInstance()->get('sourceName');
+
+        if ($activeSource) {
+
+            $sourceData = sourceData::getSourceData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));
         }
+  
+        $list = array();
+        foreach ($lists as $key => $name) {
+            $list[$key]['name'] = $name;
+        }
+
+        return[
+            'list'=>$list,
+            'activeSource' => $activeSource,
+            'sourceData' => $sourceData
+            ];
     }
 
     private function getListModels() {
@@ -42,39 +46,43 @@ class sourceControl extends ControllerService {
 
         return $list;
     }
-    
-    public function handle_saveParametrs($post){
-        
-        if(sourceData::saveParametrs(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'),$post)){
-        
+
+    public function action_saveParametrs() {
+
+        if (sourceData::saveParametrs(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'), $this->post)) {
+
             $this->msg = "Data has been saved successfully.";
-        }else{
-            
-            $this->msg = "Something was wrong. Try again.";    
+        } else {
+
+            $this->msg = "Something was wrong. Try again.";
         }
+        
+        return [];
     }
 
-    public function handle_newSource($post) {
+    public function action_newSource() {
 
         $domain = SessionService::getInstance()->get('userName');
 
-        if (sourceData::modelExists($domain, $post['name_source'])) {
+        if (sourceData::modelExists($domain, $this->post['name_source'])) {
             $this->msg = 'Sorry, this source already exists.';
-            return;
+            return [];
         }
 
         if (sourceData::maxModelNumber($domain)) {
             $this->msg = 'Over maximum number of sources..';
-            return;
+            return [];
         }
 
-        if (!sourceData::createDomain($domain, $post['name_source']) || !sourceData::createConfig($domain, $post['name_source'])) {
+        if (!sourceData::createDomain($domain, $this->post['name_source']) || !sourceData::createConfig($domain, $this->post['name_source'])) {
 
             $this->msg = 'Failed to create source.';
         }
 
         $this->delParamSession();
-        SessionService::getInstance()->set('sourceName', $post['name_source']);
+        SessionService::getInstance()->set('sourceName', $this->post['name_source']);
+        
+        return [];
     }
 
     public function action_saveDataSource() {
@@ -99,69 +107,71 @@ class sourceControl extends ControllerService {
             return;
         }
 
-        if (sourceData::saveData($file, $file["file"]["name"], SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'),$this->observData)) {
+        if (sourceData::saveData($file, $file["file"]["name"], SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'), $this->request['observData'])) {
 
             $this->msg = 'Data uložena';
         } else {
 
             $this->msg = 'Data se nepodařilo uložit. Opakujte akci.';
         }
+        
+        return[];
     }
 
     public function action_delDataSource() {
 
-        if (sourceData::delData(SessionService::getInstance()->get('userName'),SessionService::getInstance()->get('sourceName'),$this->observData)) {
+        if (sourceData::delData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'), $this->request['observData'])) {
 
             $this->msg = 'Data odstraněna';
         } else {
 
             $this->msg = "Data se nepodařilo odstranit. Zkuste znovu.";
         }
+        
+        return [];
     }
 
     public function action_setSource() {
 
         $domain = SessionService::getInstance()->get('userName');
 
-        if (sourceData::modelExists($domain, $this->source)) {
+        if (sourceData::modelExists($domain, $this->request['source'])) {
             $this->delParamSession();
-            SessionService::getInstance()->set('sourceName', $this->source);
+            SessionService::getInstance()->set('sourceName', $this->request['source']);
 
             $this->msg = 'The source selected.';
         } else {
             $this->msg = 'The source does not exist.';
         }
+        
+        return [];
     }
 
     public function action_delSource() {
 
         $domain = SessionService::getInstance()->get('userName');
 
-        if (sourceData::modelExists($domain, $this->source)) {
+        if (sourceData::modelExists($domain, $this->request['source'])) {
 
-            if (sourceData::deleteModel($domain, $this->source)) {
+            if (sourceData::deleteModel($domain, $this->request['source'])) {
 
-                if ($this->source == SessionService::getInstance()->get('sourceName')) {
+                if ($this->request['source'] == SessionService::getInstance()->get('sourceName')) {
                     $this->delParamSession();
                     SessionService::getInstance()->clear('sourceName');
                 }
 
                 $this->msg = 'The source has been deleted.';
-            };
+            }
         } else {
             $this->msg = 'The source cannot be deleted.';
         }
-    }    
+        
+        return [];
+    }
 
     private function delParamSession() {
         
     }
-    
-    public function getActiveSource(){
-        
-        return $this->activeSource;
-    }
-
 }
 
 ?>

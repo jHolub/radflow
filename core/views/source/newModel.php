@@ -1,8 +1,12 @@
 
-<form method='POST' action='<?php echo \GLOBALVAR\ROOT;?>/?core=source&handle=newSource' name = 'newSource' onsubmit='return checkNewModel()'>
+<form method='POST' action='<?php $this->link(['action' => 'newSource']); ?>' name = 'newSource' onsubmit='return checkNewModel()'>
+  
+    <div class="form-group"> 
+        <label for='name_source'>Name (only alphabets): </label>
 
-<label for='name_source'>Name (only alphabets): </label><input type='text' name='name_source'>
-
-<input type='submit' value='NEW SOURCE'>
+        <input class="form-control" type='text' name='name_source'>
+    </div>
+    
+    <input class="btn btn-default" type='submit' value='NEW'>
 
 </form>
