@@ -1,17 +1,18 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php $this->link([]); ?>">RadFlow
+            <a class="navbar-brand" href="<?php $this->link([]); ?>"><img src="./images/logo_small2.png">
             </a>
+            
         </div>
         <div>
             <ul class="nav navbar-nav">
                 <li <?php if ($this->core == 'account'): ?>class="active" <?php endif; ?>><a href='<?php $this->link(['core' => 'account']); ?>'>About</a></li>
                 <?php if ($this->user->isLogged()): ?>
                     <li <?php if ($this->core == 'source'): ?>class="active" <?php endif; ?>><a href='<?php $this->link(['core' => 'source']); ?>'>Dataset</a></li>
-                    
+
                     <?php if (SessionService::getInstance()->get('sourceName')): ?> 
-                        <li <?php if ($this->core == 'globalConf' || $this->core == 'meshGen' || $this->core == 'mesh1d' || $this->core == 'mesh2d' || $this->core == 'waterConf'): ?>class="dropdown active"<?php else: ?>class="dropdown"<?php endif; ?>>
+                        <li <?php if ($this->core == 'jacob' || $this->core == 'theis' || $this->core == 'stehfest'): ?>class="dropdown active"<?php else: ?>class="dropdown"<?php endif; ?>>
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Data analysis
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -20,10 +21,9 @@
                                 <li><a href="<?php $this->link(['core' => 'stehfest']); ?>">Real well (Agarwal)</a></li> 
                             </ul>
                         </li>
-                    <?php endif; ?>
-                        
+                    <?php endif; ?>                        
                 <?php endif; ?>
-
+                <li <?php if ($this->core == 'references'): ?>class="active" <?php endif; ?>><a href='<?php $this->link(['core' => 'references']); ?>'>References</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
@@ -39,10 +39,10 @@
 
                     <li><a href="<?php $this->link(['core' => 'account', 'action' => 'logout']); ?>"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li> 
 
-                <?php else: ?>
-                    <li><a href="<?php $this->link(['core' => 'account', 'render' => 'register']); ?>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="<?php $this->link(['core' => 'account', 'render' => 'login']); ?>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <?php endif; ?>
+                <?php else: ?>                   
+                    <li><a  data-toggle="modal" data-target="#myRegister"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                    <li><a  data-toggle="modal" data-target="#myLogin"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    <?php endif; ?>
 
                 <?php if (SessionService::getInstance()->get('modelName')): ?> 
 

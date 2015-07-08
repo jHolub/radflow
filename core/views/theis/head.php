@@ -23,9 +23,6 @@
 
 
 <script>
-    
-    var s = new Array(<?php echo $this->model->graphData['s'];?>);
-    
-    var t = new Array(<?php echo $this->model->graphData['t'];?>);
-    
+    var s = new Array(<?php $this->print_(['graphData','s']);?>);
+    var t = new Array(<?php $this->print_(['graphData','t']);?>);
 </script>

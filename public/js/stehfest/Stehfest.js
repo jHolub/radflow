@@ -199,10 +199,9 @@ function ploting(model, data, id) {
     document.getElementById(id).innerHTML = "";
 
     $.jqplot(id, [data, model], {
-        title: 'Swd',
         grid: {
             drawGridLines: true,
-            backgroundColor: "#F7FCFD",
+            backgroundColor: "#FCFCFC",
             gridLineColor: '#E8E8E8',
             gridLineWidth: 1,
             borderWidth: 0.1,
@@ -234,26 +233,28 @@ function ploting(model, data, id) {
         },
         legend: {
             show: true,
-            location: 'en'
+            location: 'nw'
         },
         series: [
-            {label: 'Cerpaci zkouska', isDragable: false, color: "blue", lineWidth: 2, markerOptions: {size: 3, shadow: false}, shadow: false},
-            {label: 'Modelovana data', isDragable: false, color: "red", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false}
+            {label: 'Pumping test', isDragable: false, color: "#001ECE", lineWidth: 3, markerOptions: {size: 5, shadow: true}, shadow: true},
+            {label: 'Model data - Agarwal', isDragable: false, color: "#AF0000",linePattern: 'dashed', lineWidth: 3, markerOptions: {size: 0, shadow: false}, shadow: true}
         ],
         axes: {
             xaxis: {
-                ticks: [0.001,0.1,0.3,1, 10, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000],
+                //ticks: [0.001,0.1,0.3,1, 10, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1000000000],
+                label: "td[]",
                 tickOptions: {
-                    //formatString: '%.1e'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                    fontSize: '11px',
+                    formatString: '%.1e'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 },
                 renderer: $.jqplot.LogAxisRenderer
             },
             yaxis: {
-                min: 0,
-                max: 20,
-                label: "s",
+               // min: 0,
+                //max: 20,
+                label: "swd[]",
                 tickOptions: {
-                    fontSize: '12px',
+                    fontSize: '11px',
                     formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 }
             }

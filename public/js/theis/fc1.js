@@ -36,7 +36,7 @@
       y = e.clientY + document.body.scrollTop;
       x = e.clientX;
       
-        if(x > 110 && x < 530 && y > 220 && y < 440){
+        if(x > 100 && x < 580 && y > 300 && y < 590){
             
             document.getElementById('w_point').value = '';
             document.getElementById('u_point').value = '';
@@ -134,7 +134,7 @@
        $.jqplot.config.enablePlugins = false;
           
        $.jqplot('chart',[data],{
-           title: 'Snížení na vrtu v čase t',
+           title: 'Drawdown in time',
             grid: {
                 drawGridLines: true,
                 backgroundColor: "#F7FCFD",
@@ -156,7 +156,7 @@
             axes: { 
                 xaxis: {  
                      ticks: [0.1,10,1000,100000],
-                     label: "t",
+                     label: "t[s]",
                     tickOptions: {
                         fontSize: '13px',
                         textColor: "black",
@@ -168,7 +168,7 @@
                   ticks: [0.1,1,10,100],
                   min:0.1, 
                   max:100,
-                  label: "s",
+                  label: "s[m]",
                   tickOptions: {
                       fontSize: '13px',
                       textColor: "black",

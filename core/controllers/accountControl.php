@@ -24,14 +24,14 @@ class accountControl extends ControllerService{
             
                 $this->msg = 'User does not exist.';
                 
-                return false;
+                return [];
             }
  
             if($row['pass']!= crypt($pass, $row['pass'])){
             
                 $this->msg = 'Password is incorrect.';
                 
-                return false;
+                return [];
             }
       
             SessionService::getInstance()->login(1, $email, "logged"); 

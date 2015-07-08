@@ -23,7 +23,7 @@ function redraw() {
     ploting(modelData, dimData, 'chart');
 
 
-
+/*
 
 // nash-sutcliffe kriterium
 
@@ -92,7 +92,7 @@ Wd = parseFloat(document.getElementById('WELL_STORAGE').value);
 
 
 
-
+*/
 
 
 /*

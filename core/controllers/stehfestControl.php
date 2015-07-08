@@ -2,8 +2,6 @@
 
 class stehfestControl extends ControllerService {
 
-    protected $msg;
-    
     public function __construct() {
 
         parent::__construct($this);
@@ -12,40 +10,50 @@ class stehfestControl extends ControllerService {
         if (!SessionService::getInstance()->get('sourceName')) {
             
             URLService::redirect(\GLOBALVAR\ROOT."/?core=source");
-        }
-        
-        $this->printData();
-        
-        $this->sourceData = stehfestData::getSourceData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));        
+        }        
     }
     
-    public function printData() {
+    public function action_main(){
+        
+        $sourceData = stehfestData::getSourceData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));        
+        
+        return [
+            'graphData'=>$this->printData(),
+            'sourceData'=>$sourceData
+        ];
+    }
+    
+    private function printData() {
 
         $data = stehfestData::getData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));
 
         if ($data) {
-            $this->graphData['t'] = 0;
-            $this->graphData['s'] = 0;
+            $graphData['t'] = 0;
+            $graphData['s'] = 0;
 
             for ($i = 0; $i < count($data["s"]); $i++) {
-                $this->graphData['t'] = $this->graphData['t'] . "," . $data["t"][$i];
-                $this->graphData['s'] = $this->graphData['s'] . "," . $data["s"][$i];
+                $graphData['t'] = $graphData['t'] . "," . $data["t"][$i];
+                $graphData['s'] = $graphData['s'] . "," . $data["s"][$i];
             }
         } else {
 
             $this->msg = 'Data is empty.';
         }
+        
+        return $graphData;
     } 
  
-    public function handle_saveParametrs($post){
+    public function action_saveParametrs(){
         
-        if(stehfestData::saveParametrs(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'),$post)){
+        if(stehfestData::saveParametrs(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'),$this->post)){
         
             $this->msg = "Data has been saved successfully.";
         }else{
             
             $this->msg = "Something was wrong. Try again.";    
         }
+        
+        return[];
     }       
     
 }    

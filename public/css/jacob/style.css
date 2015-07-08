@@ -3,27 +3,17 @@
 // autohor: Jiri Holub
 // Description: css style */
 
-
-
-#chart{
-  margin: 5px;
-  padding: 5px;
-  width: 785px;
-  height: 450px;
-  background-color: white;
-  font-size: 13px;  
-  border: 1px solid lightgray;
-  
-
+input {
+    width: 200px !important;
 }
 
-#chart1{
-  margin: 5px;
-  padding: 5px;
-  width: 785px;
-  height: 450px;
-  font-size: 13px;  
-  border: 0px solid lightgray;
+#chart{
+    height: 570px; 
+    width: 100%;
+    background-color: white;
+    font-size: 13px;  
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 1px 1px #888888;
 }
 
 .jqplot-table-legend{
@@ -31,50 +21,30 @@
 }
 
 .jqplot-cursor-tooltip{
-  font-size: 12px !important;  
-}
-
-#control_panel{
-    border: 1px solid lightgray;
-    margin: 5px;
-}
-
-#control_panel tr td{
-    width: 260px; 
-    text-align: right;
-    font-size: 11px;
+    font-size: 12px !important;  
 }
 
 #apl_data{
-  width: 293px;
-  height: 450px;
-  padding: 5px;
-  float: right; 
-  border: 1px solid lightgray;
-  overflow: scroll;
+    border: 1px solid lightgray;
+    overflow: auto;
+    height: 570px; 
+    box-shadow: 1px 1px 1px 1px #888888;
 }
 
-#apl_data table{
-    
+#apl_data table{    
     border-collapse: collapse;
-
 }
 
-#apl_data table tr th{
-    
-    background-color: lightblue;
-
+#apl_data table tr th{    
+    font-size: 11px;
 }
 
 #apl_data table tr td{
-    
-    width: 80px;
     text-align: center;
-
+    width: 50px;
+    font-size: 11px;
 }
 
-#apl_data table tr:hover{
-    
+#apl_data table tr:hover{    
     background-color: lightgrey;
-
 }

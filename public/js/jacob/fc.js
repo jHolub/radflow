@@ -139,7 +139,7 @@ function ploting(data, data_observ, points) {  console.log(data);
     $.jqplot('chart', [data, data_observ, points], {
         grid: {
             drawGridLines: true,
-            backgroundColor: "#F7FCFD",
+            backgroundColor: "#FCFCFC",
             gridLineColor: '#E8E8E8',
             gridLineWidth: 1,
             borderWidth: 0.1,
@@ -171,21 +171,21 @@ function ploting(data, data_observ, points) {  console.log(data);
         },
         legend: {
             show: true,
-            location: 'en'
+            location: 'nw'
         },
         series: [
-            {label: 'Snížení na vrtu v čase t', isDragable: false, color: "blue", lineWidth: 2, markerOptions: {size: 6, shadow: false}, shadow: false},
-            {label: 'Pozorovací vrt', isDragable: false, color: "green", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false},
-            {label: 'Přímková část', isDragable: true, color: "red", lineWidth: 3, markerOptions: {size: 11, shadow: false}, shadow: false}
+            {label: 'Drawdown', isDragable: false, color:"#001ECE", lineWidth: 3, markerOptions: {size: 5, shadow: true}, shadow: true},
+            {label: 'Observation well', isDragable: false, color: "green", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false},
+            {label: 'Straight line', isDragable: true, color:"#AF0000", lineWidth: 4, markerOptions: {size: 7, shadow: false}, shadow: true}
         ],
         axes: {
             xaxis: {
                 renderer: $.jqplot.LogAxisRenderer,
-                ticks: [1,10, 100, 1000, 2000],
-                label: "t",
+              //  ticks: [10,50,100,500,1000,5000,10000,50000,100000],
+                label: "time[s]",
                 tickOptions: {
-                    fontSize: '12px',
-                     formatString: '%.1f'
+                    fontSize: '11px',
+                     formatString: '%.1e'
                 }                
             },
             yaxis: {
@@ -193,9 +193,9 @@ function ploting(data, data_observ, points) {  console.log(data);
                 //ticks: [0.01,0.1,1,10, 100],
                 min: 0,
                 //max: 20,
-                label: "s",
+                label: "s[m]",
                 tickOptions: {
-                    fontSize: '12px',
+                    fontSize: '11px',
                     formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 }
             }

@@ -1,76 +1,66 @@
 
-<h3>Theisova metoda typové křivky</h3>
+<h4>Theis Solution - Theis type curve method</h4>
+<div class="row">
 
-<table id='control_panel_theis'>
-    <tr>
-        <td>
+    <div class="col-sm-4">      
+        <div class="form-group">
             <label>W(u): </label>
-        </td>
-        <td>
-            <input id='w_point' type='text' readonly>
-        </td>        
-        <td>
+
+            <input class="form-control input-sm" id='w_point' type='text' readonly>
+
             <label>1/u: </label>
-        </td>
-        <td>
-            <input id='u_point' type='text' readonly>
-        </td>
-        <td>
+
+            <input class="form-control input-sm" id='u_point' type='text' readonly>
+        </div>
+    </div>
+
+    <div class="col-sm-4">      
+        <div class="form-group">
             <label for='RECHARGE'>RECHARGE [m3/s]</label>
-        </td>
-        <td>
-            <input type="text" id="RECHARGE" name="RECHARGE" value="<?php $this->write($this->model->sourceData['RECHARGE']) ?>" > 
-        </td>            
-    </tr>
-    <tr>
-        <td>  
+
+            <input class="form-control input-sm" type="text" id="RECHARGE" name="RECHARGE" value="<?php  $this->print_(['sourceData', 'RECHARGE']) ?>" > 
+
             <label>s [L]: </label>
-        </td>
-        <td>
-            <input id='s_point' type='text'>
-        </td>
-        <td>
+
+            <input class="form-control input-sm" id='s_point' type='text'>
+        </div>
+    </div>
+
+    <div class="col-sm-4">      
+        <div class="form-group">
             <label>t [s]: </label>
-        </td>
-        <td>
-            <input id='t_point' type='text'>
-        </td>
-        <td>
+
+            <input class="form-control input-sm" id='t_point' type='text'>
+
             <label for='WELL_DISTANCE'>WELL_DISTANCE [m]</label>
-        </td>
-        <td>
-            <input type="text" id="WELL_DISTANCE" name="WELL_DISTANCE" value="<?php $this->write($this->model->sourceData['WELL_DISTANCE']) ?>" > 
-        </td>
-    </tr>
-</table>
+
+            <input class="form-control input-sm" type="text" id="WELL_DISTANCE" name="WELL_DISTANCE" value="<?php $this->print_(['sourceData', 'WELL_DISTANCE']) ?>" > 
+        </div>
+    </div>    
+
+</div>
 
 <form action="<?php echo \GLOBALVAR\ROOT . "/?core=theis&handle=saveParametrs"; ?>" method="POST">   
-    <table>
-        <tr>    
-            <td>
+    <div class="row">
+
+        <div class="col-sm-4">      
+            <div class="form-group">
                 <label for='TRANSMISSIVITY'>TRANSMISSIVITY [m2/s] (Editable)</label>
-            </td>
-            <td>
-                <input type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->write($this->model->sourceData['TRANSMISSIVITY']) ?>" >
-            </td>
-        </tr>
-        <tr>
-            <td>
+                <input class="form-control input-sm" type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']) ?>" >
+
+                <div class="btn btn-default btn-sm" id="button" onclick="calculTheis();">SOLVE</div>     
+                <input class="btn btn-primary btn-sm" type="submit" value="SAVE PARAMETRS">
+            </div>
+        </div>
+
+        <div class="col-sm-4">      
+            <div class="form-group">
                 <label for='STORATIVITY'>STORATIVITY [] (Editable)</label>
-            </td>
-            <td>
-                <input id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->write($this->model->sourceData['STORATIVITY']) ?>" > 
-            </td>
-            <td>
-                <b><div id="button" onclick="calculTheis();">SOLVE</div></b>
-            </td>
-        </tr>
-        <tr>    
-            <td>   
-                <input type="submit" value="SAVE PARAMETRS">
-            </td>
-        </tr>   
-    </table>       
+                <input class="form-control input-sm" id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']) ?>" > 
+            </div>
+        </div>    
+
+    </div>
 </form>  
 
 

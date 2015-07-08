@@ -22,7 +22,7 @@ class sourceControl extends ControllerService {
 
             $sourceData = sourceData::getSourceData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));
         }
-  
+
         $list = array();
         foreach ($lists as $key => $name) {
             $list[$key]['name'] = $name;

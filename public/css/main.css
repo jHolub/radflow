@@ -1,98 +1,30 @@
-html, body{
-background-color: #f8f8f8;
-margin: 0 auto;
-Font-Family: Tahoma, Geneva, sans-serif;
-height: 100%;
-
-  -webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--o-user-select: none;
-user-select: none;
+body{
+    margin: 0px;
+    padding: 0px;
 }
 
-label{
-  
-}
-
-#global_wrap{
-background-color:white;
-margin: 0 auto;
-width: 1120px;
-padding: 5px 20px;
-opacity: 0.8; 
--webkit-box-shadow: 0px 5px 17px 0px rgba(50, 50, 50, 0.15);
--moz-box-shadow:    0px 5px 17px 0px rgba(50, 50, 50, 0.15);
-box-shadow:         0px 5px 17px 0px rgba(50, 50, 50, 0.15); 
-}
-
-#wrapper{
-    min-height: 300px;
-}
-
-#head_wrap h1{
-margin-bottom: 15px;
-font-size: 36px;
-}
-
-#user_panel{
-    float:right;
-    width: 150px;
+.footer{
+    background-color: #f5f5f5;   
+    position: relative;
+    margin-top: 30px;
+    padding: 30px;
     font-size: 12px;
+    line-height: 1.5;
+    color: #767676;
+    border-top: 1px solid #eee;
 }
 
-#navi{
-padding-bottom: 10px;
-border-bottom: 2px solid rgb(51,51,0);
+#activeModelTr{
+    background-color: gold;
 }
 
-
-#navi a{
-color: rgb(204,0,51);
-margin-right: 10px;
+#alertMsg{    
+    position: absolute;
+    z-index: 20;
+    background:#fff8c4 url('../images/warning.png') no-repeat 10px 50%;
+    display: none;
 }
 
-#navi a:hover{
-text-decoration: none;
+#alertMsgCont{    
+    padding-left: 15px;
 }
-
-#main{    
-    font-size: 13px;  
-}
-
-
-#foot{
-    text-align: center;
-    font-size: 11px;
-    height: 100px;
-    padding-top: 25px;
-    border-top: 2px solid rgb(51,51,0);
-}
-
-.alertMsg{
-    float:right;
-    width: 300px;
-    background-color: yellowgreen;
-    font-size: 12px;   
-    padding: 5px;
-}
-
-#sub_menu{
-    padding: 5px;
-}
-
-#sub_menu a{
-    text-decoration: none;
-    color: black;
-    padding: 5px; 
-}
-#sub_menu a:hover{
-    text-decoration: underline;
-}
-
-.help{    
- padding: 15px;
- font-size: 12px;
- font-style: italic;
-}
-

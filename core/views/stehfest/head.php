@@ -20,9 +20,9 @@
 
 <script>
 
-    var s_input = new Array(<?php echo $this->model->graphData['s']; ?>);
+    var s_input = new Array(<?php $this->print_(['graphData','s']);?>);
 
-    var t_input = new Array(<?php echo $this->model->graphData['t']; ?>);
+    var t_input = new Array(<?php $this->print_(['graphData','t']);?>);
 
     $(document).ready(function() {
 
