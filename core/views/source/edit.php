@@ -27,11 +27,11 @@
             DRAWDOWN DATA
             <form class="form-inline" action="<?php $this->link(["action" => "saveDataSource", 'render' => 'edit']) ?>" method="post" enctype="multipart/form-data" >
                 <div class="form-group"> 
-                    <label for='file'>Allowed data format: TXT</label>
+                    <label class="small" for='file'>Allowed data format: TXT</label>
 
-                    <input class="form-control" type="file" name="file" size="500" >
+                    <input class="form-control input-sm" type="file" name="file" size="500" >
 
-                    <input class="btn btn-default" type="submit" name="save_data" value="SAVE" >
+                    <input class="btn btn-default btn-sm" type="submit" name="save_data" value="SAVE" >
                 </div>
             </form>
 
@@ -52,11 +52,11 @@
             OBSERVATION WELL DATA
             <form class="form-inline" action="<?php $this->link(['action' => 'saveDataSource', 'render' => 'edit', 'observData' => 1]); ?>" method="post" enctype="multipart/form-data" >
                 <div class="form-group"> 
-                    <label for='file'>Allowed data format: TXT</label>
+                    <label class="small" for='file'>Allowed data format: TXT</label>
 
-                    <input class="form-control" type="file" name="file" size="500" >
+                    <input class="form-control input-sm" type="file" name="file" size="500" >
 
-                    <input class="btn btn-default" type="submit" name="save_data" value="SAVE" >
+                    <input class="btn btn-default btn-sm" type="submit" name="save_data" value="SAVE" >
                 </div>
             </form>
 
