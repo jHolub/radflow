@@ -5,6 +5,8 @@ class BootUp {
     public $control;
 
     public function __construct() {
+        
+        SessionService::getInstance();
 
         if (isset($_GET['core'])) {
 

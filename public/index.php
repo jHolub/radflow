@@ -45,7 +45,7 @@ $home = new BootUp();
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
         <script src="<?php echo \GLOBALVAR\ROOT; ?>/js/jquery-1.11.1.min.js"></script>
-        <script src="<?php echo \GLOBALVAR\ROOT; ?>/js/validForm.js"></script>
+      
 
         <?php $home->view->render_webHead(); ?>
 

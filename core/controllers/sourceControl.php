@@ -64,6 +64,11 @@ class sourceControl extends ControllerService {
 
         $domain = SessionService::getInstance()->get('userName');
 
+        if(empty($this->post['name_source'])){
+            $this->msg = 'Set the model name.';
+            return[];
+        }
+        
         if (sourceData::modelExists($domain, $this->post['name_source'])) {
             $this->msg = 'Sorry, this source already exists.';
             return [];

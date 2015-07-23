@@ -2,7 +2,7 @@
     Cooper and Jacob Solution for Confined Aquifers  
 </h4>
 <hr>
-<form action="<?php echo \GLOBALVAR\ROOT . "/?core=jacob&handle=saveParametrs"; ?>" method="POST">
+<form action="<?php $this->link(['action'=>'saveParametrs'])?>" method="POST">
     <div class="row">
 
         <div class="col-sm-4">      

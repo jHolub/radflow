@@ -1,21 +1,20 @@
+
 <?php
 
 require_once \GLOBALVAR\CORE_PATH . "/class/dataService.php";
 
-class stehfestControl extends ControllerService {
+class pechControl extends ControllerService {
 
     public function __construct() {
 
         parent::__construct($this);
 
-// neopravneny pristup
-        if (!SessionService::getInstance()->get('sourceName')) {
-            
-            URLService::redirect(\GLOBALVAR\ROOT."/?core=source");
-        }        
+        if (!SessionService::getInstance()->get('sourceName') || !SessionService::getInstance()->get('userName')) {
+
+            URLService::redirect(\GLOBALVAR\ROOT . "/?core=source");
+        }
     }
-    
-    public function action_main(){
+  public function action_main(){
         
         $sourceData = dataService::getSourceData(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'));        
         
@@ -56,7 +55,8 @@ class stehfestControl extends ControllerService {
         }
         
         return[];
-    }       
-    
-}    
+    }     
+
+}
+
 ?>

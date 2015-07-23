@@ -1,5 +1,6 @@
 <?php
-class stehfestData{
+
+class dataService {
 
     private static $userDepo = \GLOBALVAR\USERDEPO_PATH;
     private static $config = "/config.xml";
@@ -29,32 +30,33 @@ class stehfestData{
 
         return $data;
     }
-    
-    public function getSourceData($userDir, $source){
-        
-        $source = simplexml_load_file(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
 
-        foreach ((array)$source as $key => $value) {
-            if($value != 'NULL'){
-                
+    public static function getSourceData($userDir, $source) {
+
+        $source = simplexml_load_file(self::$userDepo . "/" . $userDir . "/" . $source . self::$config);
+
+        foreach ((array) $source as $key => $value) {
+            if ($value != 'NULL') {
+
                 $data[$key] = $value;
-            }else{$data[$key] = "";}
+            } else {
+                $data[$key] = "";
+            }
         }
         return $data;
     }
-    
-    public function saveParametrs($userDir, $source, $data){
-    
-        $param = simplexml_load_file(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
+
+    public static function saveParametrs($userDir, $source, $data) {
+
+        $param = simplexml_load_file(self::$userDepo . "/" . $userDir . "/" . $source . self::$config);
 
         foreach ($data as $key => $value) {
-            
+
             $param->$key = "$value";
         }
-        
-        return $param->asXML(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
-        
-    } 
+
+        return $param->asXML(self::$userDepo . "/" . $userDir . "/" . $source . self::$config);
+    }
 
 }
 

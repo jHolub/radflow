@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<?php echo \GLOBALVAR\ROOT; ?>/css/jacob/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo \GLOBALVAR\ROOT; ?>/css/stehfest/style.css" />
 
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jqplot/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jqplot/plugins/jqplot.dateAxisRenderer.min.js"></script>
@@ -14,16 +14,4 @@
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jqplot/plugins/jqplot.highlighter.min.js"></script>
 
-<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/jacob/fc.js"></script>
-
-<script>
-
-    var s = new Array(<?php $this->print_(['graphData', 's']); ?>);
-
-    var t = new Array(<?php $this->print_(['graphData', 't']); ?>);
-
-    var s_observ = new Array(<?php $this->print_(['graphDataObserv', 's']); ?>);
-
-    var t_observ = new Array(<?php $this->print_(['graphDataObserv', 't']); ?>);
-
-</script>
+<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/plotting.js"></script>

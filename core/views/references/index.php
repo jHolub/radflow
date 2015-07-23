@@ -1,3 +1,11 @@
+ 
+<?php
+    require_once \GLOBALVAR\VIEWS_PATH . '/account/login.php';
+    require_once \GLOBALVAR\VIEWS_PATH . '/account/register.php';
+?>
+
+
+
 <h4>References</h4>
 <ul style="list-style-type:none">
     <li>1)	<i>Agarwal, R. G., R. Al-Hussainy, and H. J. Ramey Jr.</i>, 1970: An investigation of wellbore storage and skin effect in unsteady liquid flow: I. Analytical treatment. Trans. Soc. Pet. Eng. AIME, 249, 279-290.</li>

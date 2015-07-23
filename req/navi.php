@@ -1,9 +1,9 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php $this->link([]); ?>"><img src="./images/logo_small2.png">
-            </a>
-            
+            <a style="margin-right:8px; margin-left:5px; padding:2px;" class="navbar-brand" href="<?php $this->link([]); ?>">
+                <img src="./images/radflowLogoSmall.png">
+            </a>            
         </div>
         <div>
             <ul class="nav navbar-nav">
@@ -19,6 +19,7 @@
                                 <li><a href="<?php $this->link(['core' => 'jacob']); ?>">Jacob method</a></li>
                                 <li><a href="<?php $this->link(['core' => 'theis']); ?>">Theis method</a></li>
                                 <li><a href="<?php $this->link(['core' => 'stehfest']); ?>">Real well (Agarwal)</a></li> 
+                                <li><a href="<?php $this->link(['core' => 'pech']); ?>">W-skin effect (Pech)</a></li> 
                             </ul>
                         </li>
                     <?php endif; ?>                        

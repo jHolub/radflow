@@ -59,17 +59,14 @@ class jacobControl extends ControllerService {
                 $graphDataObserv['t'] = $graphDataObserv['t'] . "," . $data["t"][$i];
                 $graphDataObserv['s'] = $graphDataObserv['s'] . "," . $data["s"][$i];
             }
-        } else {
-
-            $this->msg = 'Observ data is empty.';
-        }
+        } 
         
         return $graphDataObserv;
     }
 
-    public function action_saveParametrs($post) {
+    public function action_saveParametrs() {
 
-        if (jacobData::saveParametrs(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'), $post)) {
+        if (jacobData::saveParametrs(SessionService::getInstance()->get('userName'), SessionService::getInstance()->get('sourceName'), $this->post)) {
 
             $this->msg = "Data has been saved successfully.";
         } else {

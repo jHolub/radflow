@@ -61,7 +61,7 @@ class SessionService{
         
     }    
     
-   private function load(){
+   private static function load(){
        
         // hodnoty pro anonymniho uzivatele
         $_SESSION['userName'] = "Host";

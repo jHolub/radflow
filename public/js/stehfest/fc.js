@@ -20,7 +20,7 @@ function redraw() {
 
     modelST = realToDimensionless(modelTd, modelSd);
 
-    ploting(modelData, dimData, 'chart');
+    ploting(modelData, dimData, 'chart',{x: 'td', y: "sd[]"});
 
 
 /*
@@ -195,7 +195,4 @@ function matching() {
             }
         }
     }
-
-    console.log("cd- " + cdCor + " w- " + wCor);
-
 }

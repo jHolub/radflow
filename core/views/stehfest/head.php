@@ -17,6 +17,7 @@
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/BesselFc.js"></script>
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/Stehfest.js"></script>
 <script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/fc.js"></script>
+<script type="text/javascript" src="<?php echo \GLOBALVAR\ROOT; ?>/js/stehfest/plotting.js"></script>
 
 <script>
 
@@ -32,7 +33,7 @@
 
         modelData = stehfest(td);
         
-        ploting(modelData, dimData, 'chart');
+        ploting(modelData, dimData, 'chart',{x: 'td', y: "sd[]"});
 
     });
 </script>

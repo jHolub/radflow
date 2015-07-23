@@ -108,7 +108,7 @@ class sourceData {
 
     }
     
-    public function saveParametrs($userDir, $source, $data){
+    public static function saveParametrs($userDir, $source, $data){
     
         $param = simplexml_load_file(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
 
@@ -121,7 +121,7 @@ class sourceData {
         
     } 
     
-    public function getSourceData($userDir, $source){
+    public static function getSourceData($userDir, $source){
         
         $source = simplexml_load_file(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
 
@@ -134,7 +134,7 @@ class sourceData {
         return $data;
     }    
     
-    private function createConfFile($source){
+    private static function createConfFile($source){
         
         $nodes = array('STORATIVITY','TRANSMISSIVITY','RECHARGE','RADIUS_WELL','TEST_DATA','OBSERV_DATA','WELL_DISTANCE','SKIN','WELL_STORAGE');
         

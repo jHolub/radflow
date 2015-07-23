@@ -40,7 +40,7 @@
 
 </div>
 
-<form action="<?php echo \GLOBALVAR\ROOT . "/?core=theis&handle=saveParametrs"; ?>" method="POST">   
+<form action="<?php $this->link(['action'=>'saveParametrs']);?>" method="POST">   
     <div class="row">
 
         <div class="col-sm-3">      

@@ -31,7 +31,7 @@ class theisData {
         return $data;
     }
     
-    public function getSourceData($userDir, $source){
+    public static function getSourceData($userDir, $source){
         
         $source = simplexml_load_file(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
 
@@ -44,7 +44,7 @@ class theisData {
         return $data;
     }
     
-    public function saveParametrs($userDir, $source, $data){
+    public static function saveParametrs($userDir, $source, $data){
     
         $param = simplexml_load_file(self::$userDepo . "/" . $userDir  . "/" . $source . self::$config);
 
