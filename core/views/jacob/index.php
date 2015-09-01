@@ -1,5 +1,5 @@
 <h4>
-    Cooper and Jacob Solution for Confined Aquifers  
+    Jacobova semilogaritmická metoda přímky
 </h4>
 <hr>
 <form action="<?php $this->link(['action'=>'saveParametrs'])?>" method="POST">
@@ -8,13 +8,13 @@
         <div class="col-sm-4">      
             <div class="form-group">
 
-                <label class="small">SLOPE i:</label>      
+                <label class="small">SKLON i:</label>      
                 <input class="form-control input-sm" id='result_i' type='number' readonly>
 
-                <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITY [m2/s] (EDITABLE)</label>
+                <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITA [m2/s] (EDITABLE)</label>
                 <input class="form-control input-sm" type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']) ?>" readonly>
                 <br>
-                <div class="btn btn-default" id="button" onclick='analysisTrans();'>SOLVE TRANSMISIVITY</div>               
+                <div class="btn btn-default" id="button" onclick='analysisTrans();'>URČI TRANSMISIVITU</div>               
 
             </div>
         </div>
@@ -55,11 +55,11 @@
         <div class="col-sm-4">      
             <div class="form-group">
 
-                <label class="small" for='STORATIVITY'>STORATIVITY [] (EDITABLE)</label>
+                <label class="small" for='STORATIVITY'>STORATIVITA [] (EDITABLE)</label>
 
                 <input class="form-control input-sm" id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']) ?>" readonly>            
                 <br>
-                <div class="btn btn-default btn-sm" id="button" onclick='analysisStor();'>SOLVE STORATIVITY</div>
+                <div class="btn btn-default btn-sm" id="button" onclick='analysisStor();'>URČI STORATIVITU</div>
             </div>
         </div>   
 
@@ -80,7 +80,7 @@
         <div class="col-sm-4">      
             <div class="form-group">
 
-                <label class="small" for='RECHARGE'>RECHARGE [m3/s]</label>
+                <label class="small" for='RECHARGE'>ČERPANÉ MNOŽSTVÍ [m3/s]</label>
                 <input class="form-control input-sm" type="text" id="RECHARGE" name="RECHARGE" value="<?php $this->print_(['sourceData', 'RECHARGE']) ?>" >
 
             </div>
@@ -88,15 +88,15 @@
 
         <div class="col-sm-4">      
             <div class="form-group">
-                <label class="small"  for='WELL_DISTANCE'>DISTANCE OBSERVATION WELL [m]</label>
+                <label class="small"  for='WELL_DISTANCE'>VZDÁLENOST POZOROVACÍHO VRTU [m]</label>
                 <input class="form-control input-sm" type="text" id="WELL_DISTANCE" name="WELL_DISTANCE" value="<?php $this->print_(['sourceData', 'WELL_DISTANCE']) ?>" >            
 
             </div>
         </div>
     </div>
 
-    <div class="btn btn-warning btn-sm" id="button" onclick='delAnalysisInput();'>RESET</div>
-    <input class="btn btn-success btn-sm" type="submit" value="SAVE PARAMETRS">
+    <div class="btn btn-warning btn-sm" id="button" onclick='delAnalysisInput();'>ZNOVU</div>
+    <input class="btn btn-success btn-sm" type="submit" value="ULOŽ PARAMETRY">
 
 </form>
 
@@ -113,7 +113,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th></th><th>Time [s]</th><th>Drawdown [m]</th>
+                        <th></th><th>ČAS [s]</th><th>SNÍŽENÍ [m]</th>
                     </tr>
                 </thead>
                 <tbody id="apl_data_tab_body">

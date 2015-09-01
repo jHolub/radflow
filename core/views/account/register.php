@@ -7,8 +7,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                <div class="help">User registration form for the RadFlow application.</div>
-
+                <div class="help">Uživatelská registrace do aplikace Radflow.</div>
             </div>
             <div class="modal-body">
 
@@ -22,23 +21,23 @@
                     </div>
 
                     <div class="form-group">  
-                        <label for='password'>Password: </label>
+                        <label for='password'>Heslo: </label>
                         <input class="form-control" type='password' name='password'>
                     </div>
 
                     <div class="form-group">  
-                        <label for='passwordVerify'>Confirm pwd: </label>
+                        <label for='passwordVerify'>Potvrzení hesla: </label>
                         <input class="form-control" type='password' name='passwordVerify'>
                     </div>
 
-                    <input class="btn btn-default" type='submit' value='Create an account' name='regist'>
+                    <input class="btn btn-default" type='submit' value='Vytvořit účet' name='regist'>
 
                 </form>
 
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zavři</button>
             </div>
         </div>
 

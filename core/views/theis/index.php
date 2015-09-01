@@ -1,5 +1,5 @@
 
-<h4>Theis Solution - Theis type curve method</h4>
+<h4>Theisova metoda typové křivky</h4>
 <div class="row">
 
     <div class="col-sm-3">      
@@ -16,7 +16,7 @@
 
     <div class="col-sm-3">      
         <div class="form-group">
-            <label class="small" for='RECHARGE'>RECHARGE [m3/s]</label>
+            <label class="small" for='RECHARGE'>ČERPANÉ MNOŽSTVÍ [m3/s]</label>
 
             <input class="form-control input-sm" type="text" id="RECHARGE" name="RECHARGE" value="<?php  $this->print_(['sourceData', 'RECHARGE']) ?>" > 
 
@@ -32,7 +32,7 @@
 
             <input class="form-control input-sm" id='t_point' type='text'>
 
-            <label class="small" for='WELL_DISTANCE'>WELL_DISTANCE [m]</label>
+            <label class="small" for='WELL_DISTANCE'>VZDÁLENOST POZOROVACÍHO VRTU [m]</label>
 
             <input class="form-control input-sm" type="text" id="WELL_DISTANCE" name="WELL_DISTANCE" value="<?php $this->print_(['sourceData', 'WELL_DISTANCE']) ?>" > 
         </div>
@@ -45,17 +45,17 @@
 
         <div class="col-sm-3">      
             <div class="form-group">
-                <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITY [m2/s] (Editable)</label>
+                <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITA [m2/s] (Editable)</label>
                 <input class="form-control input-sm" type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']) ?>" >
 <br>
-                <div class="btn btn-default btn-sm" id="button" onclick="calculTheis();">SOLVE</div>     
+                <div class="btn btn-default btn-sm" id="button" onclick="calculTheis();">URČI</div>     
                 <input class="btn btn-primary btn-sm" type="submit" value="SAVE PARAMETRS">
             </div>
         </div>
 
         <div class="col-sm-3">      
             <div class="form-group">
-                <label class="small" for='STORATIVITY'>STORATIVITY [] (Editable)</label>
+                <label class="small" for='STORATIVITY'>STORATIVITA [] (Editable)</label>
                 <input class="form-control input-sm" id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']) ?>" > 
             </div>
         </div>    

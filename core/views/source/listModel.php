@@ -3,7 +3,7 @@
 
     <tr>
 
-        <th>ORDER</th><th>NAME</th><th>DATE</th><th>SELECT</th><th>REMOVE</th><th>EDIT</th>  
+        <th>POŘADÍ</th><th>NÁZEV</th><th>DATUM</th><th>ZVOLIT</th><th>ODSTRANIT</th><th>EDITOVAT</th>  
     </tr>
 
     <?php foreach ($this->var_('list') as $key => $list):?>
@@ -20,7 +20,7 @@
                 <?php echo "-"; ?>
             </td>
             <td>
-                <a href='<?php $this->link(['action'=>'setSource','source'=>$list['name']]); ?>' ><span class="glyphicon glyphicon-ok"></span></a>
+                <a href='<?php $this->link(['action'=>'setSource','render'=>'edit','source'=>$list['name']]); ?>' ><span class="glyphicon glyphicon-ok"></span></a>
             </td>
             <td>
                 <a href='<?php $this->link(['action'=>'delSource','source'=>$list['name']]); ?>'><span class="glyphicon glyphicon-trash"></span></a>

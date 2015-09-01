@@ -1,8 +1,8 @@
-<h4 class="help">Create new model (A maximum of ten models).</h4>    
+<h4 class="help">Vytvoření modelu (maximální počet modelů je 10)</h4>    
 
 <?php $this->embed('newModel.php'); ?>
 <hr>
-<h4 class="help">List of previously dataset.</h4>    
+<h4 class="help">Čerpací zkoušky</h4>    
 
 <?php $this->embed('listModel.php'); ?>
 

@@ -7,7 +7,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 
-                <div class="help">Enabling Access for an Application, you must login. In case you have not created an account you must first sign up.</div>    
+                 <div class="help">Pro využívání analytických nástrojů aplikace je nutné se příhlasit. V případě, že nemáte vytvořený učet, můsíte se nejprve registrovat.</div>    
 
             </div>
             <div class="modal-body">
@@ -24,20 +24,20 @@
                     </div>
                     <div class="form-group">                  
 
-                        <label for='password'>Password: </label>
+                        <label for='password'>Heslo: </label>
 
                         <input class="form-control" type='password' name='password'>
 
                     </div>     
 
-                    <input class="btn btn-default" type='submit' value='Log in' name='login'>
+                    <input class="btn btn-default" type='submit' value='Přihlásit' name='login'>
 
                 </form>
                 
                 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zavřit</button>
             </div>
         </div>
 

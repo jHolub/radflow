@@ -2,25 +2,25 @@
 
     <div class="col-sm-3">      
         <div class="form-group">
-            <label class="small" for='RADIUS_WELL'>RADIUS_WELL [m]</label>
+            <label class="small" for='RADIUS_WELL'>POLOMĚR VRTU [m]</label>
             <input class="form-control input-sm" type="text" id="RADIUS_WELL" name="RADIUS_WELL" value="<?php $this->print_(['sourceData', 'RADIUS_WELL']) ?>" > 
         </div>
     </div>
     <div class="col-sm-3">      
         <div class="form-group">
-            <label class="small" for='RECHARGE'>RECHARGE [m3/s]</label>
+            <label class="small" for='RECHARGE'>ČERPANÉ MNOŽSTVÍ [m3/s]</label>
             <input class="form-control input-sm" type="text" id="RECHARGE" name="RECHARGE" value="<?php $this->print_(['sourceData', 'RECHARGE']) ?>" > 
         </div>
     </div>
     <div class="col-sm-3">      
         <div class="form-group">
-            <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITY [m2/s] </label>
+            <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITA [m2/s] </label>
             <input class="form-control input-sm" type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']) ?>" >
         </div>
     </div>
     <div class="col-sm-3">      
         <div class="form-group">
-            <label class="small" for='STORATIVITY'>STORATIVITY []</label>          
+            <label class="small" for='STORATIVITY'>STORATIVITA []</label>          
             <input  class="form-control input-sm" id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']) ?>" > 
 
         </div>
@@ -70,20 +70,20 @@
     <div class="row">
         <div class="col-sm-3">      
             <div class="form-group">
-                <label class="small">WELL STORAGE Cd:</label>
+                <label class="small">VLASTNÍ OBJEM VRTU Cd:</label>
                 <input class="form-control input-sm" id='WELL_STORAGE' name='WELL_STORAGE' type='text' value="<?php $this->print_(['sourceData', 'WELL_STORAGE']) ?>">
             </div>
         </div>
         <div class="col-sm-3">      
             <div class="form-group">
-                <label class="small">SKIN EFFECT Wd:</label>
+                <label class="small">DODATEČNÉ ODPORY Wd:</label>
                 <input class="form-control input-sm" id='SKIN' name='SKIN' type='text' value="<?php $this->print_(['sourceData', 'SKIN']) ?>" >
             </div>
         </div>
         <div class="col-sm-3">   
             <br>
-            <div class="btn btn-default btn-sm " onclick="solve()">SOLVE</div>
-            <input class="btn btn-primary btn-sm" type="submit" value="SAVE PARAMETRS">
+            <div class="btn btn-default btn-sm " onclick="solve()">URČI</div>
+            <input class="btn btn-primary btn-sm" type="submit" value="ULOŽ PARAMETRY">
         </div>
     </div>
 </form> 
