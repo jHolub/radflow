@@ -3,17 +3,19 @@
     <div class="modal-dialog">
 
         <!-- Modal content-->
+
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                
-                 <div class="help">Pro využívání analytických nástrojů aplikace je nutné se příhlasit. V případě, že nemáte vytvořený učet, můsíte se nejprve registrovat.</div>    
 
+                <div class="help"><b>Přihlášení do aplikace.</b></div>
+   
             </div>
-            <div class="modal-body">
-                
-                
-                <form role="form" action='<?php $this->link(['core' => 'account', 'action' => 'login']); ?>' method='POST' onsubmit='return checkLog()' >
+            <form role="form" action='<?php $this->link(['core' => 'account', 'action' => 'login']); ?>' method='POST' onsubmit='return checkLog()' >
+
+                <div class="modal-body">
+
+
 
                     <div class="form-group"> 
 
@@ -29,16 +31,16 @@
                         <input class="form-control" type='password' name='password'>
 
                     </div>     
+             <small class="help">Pro využívání analytických nástrojů aplikace je nutné se příhlasit. V případě, že nemáte vytvořený učet, můsíte se nejprve registrovat.</small>    
 
-                    <input class="btn btn-default" type='submit' value='Přihlásit' name='login'>
 
-                </form>
-                
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Zavřit</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <input class="btn btn-success" type='submit' value='Přihlásit' name='login'>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Zavřit</button>
+                </div>
+
+            </form>
         </div>
 
     </div>

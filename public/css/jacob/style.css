@@ -41,8 +41,8 @@ input {
 
 #apl_data table tr td{
     text-align: center;
-    width: 50px;
-    font-size: 11px;
+    width: 60px;
+    font-size: 12px;
 }
 
 #apl_data table tr:hover{    

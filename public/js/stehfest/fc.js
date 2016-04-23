@@ -23,7 +23,7 @@ function redraw() {
     ploting(modelData, dimData, 'chart',{x: 'td', y: "sd[]"});
 
 
-/*
+
 
 // nash-sutcliffe kriterium
 
@@ -46,7 +46,7 @@ function redraw() {
     NS = Nash_Sutcliffe(NS_sd, NS_sd_model);
     document.getElementById('NS').value = NS;
 
-
+/*
 
 //--------- rozmerne jednotky   
     data_input = new Array();

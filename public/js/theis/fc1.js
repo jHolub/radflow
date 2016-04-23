@@ -134,7 +134,7 @@
        $.jqplot.config.enablePlugins = false;
           
        $.jqplot('chart',[data],{
-           title: 'Drawdown in time',
+           title: 'SNÍŽENÍ V ČASE',
             grid: {
                 drawGridLines: true,
                 backgroundColor: "#F7FCFD",

@@ -186,7 +186,7 @@ function stehfest(td) {
             i++;
         }
         // groundwater function - dimensionless drawdowns
-        ft = Math.log(2) / td[a] * sum;
+        ft = (Math.log(2) / td[a]) * sum;
 
         result[a] = [td[a], ft];
     }

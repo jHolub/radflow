@@ -37,15 +37,12 @@ $home = new BootUp();
         <meta name="description" content="RadFlow - groundwater application software">
         <meta http-equiv="content-language" content="cs" />
 
-        <link rel="stylesheet" href="<?php echo \GLOBALVAR\ROOT; ?>/css/main.css">
-
         <link rel="stylesheet" href="<?php echo \GLOBALVAR\ROOT; ?>/css/bootstrap3_3_2/css/bootstrap.min.css">
 
-        <link href='http://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo \GLOBALVAR\ROOT; ?>/css/main.css">
 
         <script src="<?php echo \GLOBALVAR\ROOT; ?>/js/jquery-1.11.1.min.js"></script>
-      
+
 
         <?php $home->view->render_webHead(); ?>
 
@@ -59,17 +56,17 @@ $home = new BootUp();
 
     </head>
 
-    <body>  
+    <body> 
 
         <div class="container">
-
-            <?php $home->view->render_header(); ?>
-
-            <?php $home->view->render_navi(); ?>                
 
             <div class="alertMsg alert alert-warning" id="alertMsg">
                 <span id="alertMsgCont"><?php $home->view->get_msg(); ?></span>
             </div>  
+
+            <?php $home->view->render_header(); ?>
+
+            <?php $home->view->render_navi(); ?> 
 
             <?php $home->view->render_page(); ?>
 

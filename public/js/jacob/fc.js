@@ -65,7 +65,12 @@ function analysisTrans() {
     }
 
     i = (s2 - s1) / ((Math.log(t2) / Math.LN10) - (Math.log(t1) / Math.LN10));
-    console.log( parseFloat(Q) /  i );
+    
+    
+    console.log(s2);
+    console.log(s1);
+    console.log(((Math.log(t2) / Math.LN10) - (Math.log(t1) / Math.LN10)));
+    console.log(i);
     T = 0.183 * (parseFloat(Q) /  i );
 
     document.getElementById('result_i').value = i.toFixed(5);
@@ -130,7 +135,7 @@ function jacob() {
 }
 
 
-function ploting(data, data_observ, points) {  console.log(data);
+function ploting(data, data_observ, points) {
 
     document.getElementById('chart').innerHTML = "";
 
@@ -174,9 +179,9 @@ function ploting(data, data_observ, points) {  console.log(data);
             location: 'nw'
         },
         series: [
-            {label: 'Drawdown', isDragable: false, color:"#001ECE", lineWidth: 3, markerOptions: {size: 5, shadow: true}, shadow: true},
-            {label: 'Observation well', isDragable: false, color: "green", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false},
-            {label: 'Straight line', isDragable: true, color:"#AF0000", lineWidth: 4, markerOptions: {size: 7, shadow: false}, shadow: true}
+            {label: 'SNÍŽENÍ', isDragable: false, color:"#001ECE", lineWidth: 3, markerOptions: {size: 5, shadow: true}, shadow: true},
+            {label: 'POZOROVACÍ VRT', isDragable: false, color: "green", lineWidth: 1, markerOptions: {size: 2, shadow: false}, shadow: false},
+            {label: 'EDITACE', isDragable: true, color:"#AF0000", lineWidth: 4, markerOptions: {size: 7, shadow: false}, shadow: true}
         ],
         axes: {
             xaxis: {

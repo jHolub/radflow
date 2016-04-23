@@ -65,23 +65,23 @@ class sourceControl extends ControllerService {
         $domain = SessionService::getInstance()->get('userName');
 
         if(empty($this->post['name_source'])){
-            $this->msg = 'Set the model name.';
+            $this->msg = 'Zvolte název.';
             return[];
         }
         
         if (sourceData::modelExists($domain, $this->post['name_source'])) {
-            $this->msg = 'Sorry, this source already exists.';
+            $this->msg = 'Tento model již exituje.';
             return [];
         }
 
         if (sourceData::maxModelNumber($domain)) {
-            $this->msg = 'Over maximum number of sources..';
+            $this->msg = 'Překročen maximální počet modelů pro uživatele';
             return [];
         }
 
         if (!sourceData::createDomain($domain, $this->post['name_source']) || !sourceData::createConfig($domain, $this->post['name_source'])) {
 
-            $this->msg = 'Failed to create source.';
+            $this->msg = 'Akce se nazdařila.';
         }
 
         $this->delParamSession();

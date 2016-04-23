@@ -1,8 +1,22 @@
-<h4 class="help">Vytvoření modelu (maximální počet modelů je 10)</h4>    
 
-<?php $this->embed('newModel.php'); ?>
+<section>
+
+    <div class="container">
+
+
+                <?php $this->embed('newModel.php'); ?>
+
+
+    </div>
+
+</section>
+
 <hr>
-<h4 class="help">Čerpací zkoušky</h4>    
+<h3 class="help">
+    <span class="glyphicon glyphicon-th-list"></span>
+    Čerpací zkoušky
+</h3> 
+<br>
 
 <?php $this->embed('listModel.php'); ?>
 

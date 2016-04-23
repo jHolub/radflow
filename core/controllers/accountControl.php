@@ -72,6 +72,8 @@ class accountControl extends ControllerService{
                 return false;    
 
             }
+            
+            $this->action_login();
 
         $this->msg = ' Successful sign in.';
         return [];  

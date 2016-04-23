@@ -3,16 +3,14 @@
 // system var
 namespace GLOBALVAR;
 
-$project = 'dev_final_radflow';
-//$project = '';
+$project = '';
 
 $server = $_SERVER['SERVER_NAME'];
 $port = $_SERVER['SERVER_PORT'];
 $url = str_replace("/index.php", "", $_SERVER['SCRIPT_NAME']);
 define(__NAMESPACE__ . "\ROOT", "http://" . $server . ":" . $port . $url);
 
-$root = $_SERVER["DOCUMENT_ROOT"] . '/';
-//$root = $_SERVER["DOCUMENT_ROOT"] . "/domains/radflow.cz";
+$root = $_SERVER["DOCUMENT_ROOT"] . "/domains";
 
 define(__NAMESPACE__ . '\BASE_PATH', $root . $project);
 define(__NAMESPACE__ . '\SETTING_PATH', $root . $project . "/setting");
@@ -41,4 +39,3 @@ if (function_exists('apache_get_modules')) {
   define(__NAMESPACE__ . '\MOD_REWRITE', $mod_rewrite);
 }
 ?>
-

@@ -45,19 +45,23 @@
              Q = 42400;
              500min = 0.3472den
              */
-            r = 0.001;
+            r = 1950;
 
-            S = 0.006149;
+            S = 0.000125;
 
             //T = 0.0012379;
             //T = 106.95; // m2/den
-            T = 0.074274; // m2/min
+            T = 0.00049799; // m2/min
 
             //Q = 0.0023;
             //Q = 198.72; // m3/den
-            Q = 0.138;  // m3/min
+            Q = 0.00023;  // m3/min
 
-            t = new Array(50, 70, 100, 200, 500, 700, 1000, 100000);
+            t = new Array(260000,2600000,2600000);
+            
+
+
+            
             res = "";
             for (i = 0; i < t.length; i++) {
 
@@ -68,7 +72,8 @@
 //console.log(u);
 //console.log(well_fce(u));                
                 console.log(s);
-                res = res + "s " + s + " t: " + t[i] + "<br>"
+                //res = res + "s " + s + " t: " + t[i] + "<br>"
+                res = res + s + "<br>"
             }
             document.write(res);
         </script>

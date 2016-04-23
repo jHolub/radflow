@@ -54,8 +54,9 @@ function singlePloting(data, id, label) {
                 renderer: $.jqplot.LogAxisRenderer
             },
             yaxis: {
-               // min: 0,
+                //min: 0,
                 //max: 20,
+                //ticks: [0.001,0.1,0.3,1],
                 label: label.y,
                 tickOptions: {
                     fontSize: '11px',
@@ -67,6 +68,33 @@ function singlePloting(data, id, label) {
 }
 
 function ploting(model, data, id, label) {
+ /*   
+     console.log('model data');
+     for(l = 0; l < model.length; l++){
+     console.log(model[l][1] + "\t" + model[l][0]);
+     }
+*/
+    console.log('data');
+    for (l = 0; l < 100; l++) {
+        console.log(data[l][1] + "\t" + data[l][0]);
+    }
+    
+        for (l = 100; l < 200; l = l + 3) {
+        console.log(data[l][1] + "\t" + data[l][0]);
+    }
+
+    for (l = 200; l < 550; l = l + 5) {
+        console.log(data[l][1] + "\t" + data[l][0]);
+    }
+
+
+    for (l = 550; l < 1200; l = l + 15) {
+        console.log(data[l][1] + "\t" + data[l][0]);
+    }
+
+    for (l = 1200; l < data.length; l = l + 30) {
+        console.log(data[l][1] + "\t" + data[l][0]);
+    }
 
     document.getElementById(id).innerHTML = "";
 
@@ -109,7 +137,7 @@ function ploting(model, data, id, label) {
         },
         series: [
             {label: 'Pumping test', isDragable: false, color: "#001ECE", lineWidth: 3, markerOptions: {size: 5, shadow: true}, shadow: true},
-            {label: 'Model data - Agarwal', isDragable: false, color: "#AF0000",linePattern: 'dashed', lineWidth: 3, markerOptions: {size: 0, shadow: false}, shadow: true}
+            {label: 'Model data - Agarwal', isDragable: false, color: "#AF0000", linePattern: 'dashed', lineWidth: 3, markerOptions: {size: 0, shadow: false}, shadow: true}
         ],
         axes: {
             xaxis: {
@@ -122,7 +150,7 @@ function ploting(model, data, id, label) {
                 renderer: $.jqplot.LogAxisRenderer
             },
             yaxis: {
-               // min: 0,
+                // min: 0,
                 //max: 20,
                 label: label.y,
                 tickOptions: {
@@ -183,9 +211,9 @@ function plotingReal(model, data, id) {
         ],
         axes: {
             xaxis: {
-                ticks: [0.01,0.05,0.1,0.5,1, 10, 100, 500, 1000, 5000],
+                ticks: [0.01, 0.05, 0.1, 0.5, 1, 10, 100, 500, 1000, 5000],
                 tickOptions: {
-                   formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                    formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 },
                 renderer: $.jqplot.LogAxisRenderer
             },
@@ -250,23 +278,23 @@ function plotingLogLog(model, data, id) {
         ],
         axes: {
             xaxis: {
-                ticks: [0.01,0.05,0.1,0.5,1, 10, 100, 500, 1000, 5000,10000,100000,1000000],
+                ticks: [0.01, 0.05, 0.1, 0.5, 1, 10, 100, 500, 1000, 5000, 10000, 100000, 1000000],
                 tickOptions: {
-                   formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                    formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
                 },
                 renderer: $.jqplot.LogAxisRenderer
             },
             yaxis: {
-                  ticks: [0.01,0.1,1,10,100],
-                  min:0.1, 
-                  max:100,
-                  label: "sd",
-                  tickOptions: {
-                      fontSize: '13px',
-                      textColor: "black",
-                      formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
-                  },
-                  renderer: $.jqplot.LogAxisRenderer
+                ticks: [0.01, 0.1, 1, 10, 100],
+                min: 0.1,
+                max: 100,
+                label: "sd",
+                tickOptions: {
+                    fontSize: '13px',
+                    textColor: "black",
+                    formatString: '%.1f'                           //http://perldoc.perl.org/functions/sprintf.html                      
+                },
+                renderer: $.jqplot.LogAxisRenderer
             }
         }
     });

@@ -55,7 +55,7 @@
             } 
         }
         
-        private function createDirectory($depoName){  
+        private static function createDirectory($depoName){  
             
             return mkdir(self::$userDepo."/".$depoName, 0777);               
      

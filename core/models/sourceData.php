@@ -40,7 +40,7 @@ class sourceData {
     public static function maxModelNumber($domain) {
 
         $dir = self::$userDepo . "/" . $domain . "/";
-        return (count(scandir($dir)) < 12) ? false : true;
+        return (count(scandir($dir)) < 52) ? false : true;
     }
 
     public static function deleteModel($domain, $model) {

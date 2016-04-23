@@ -1,6 +1,7 @@
 body{
-    margin: 0px;
-    padding: 0px;
+    color: #444444;
+    font-family: Tahoma,Verdana,Segoe,sans-serif; 
+    line-height: 1.5;    
 }
 
 .footer{
@@ -10,7 +11,7 @@ body{
     padding: 30px;
     font-size: 12px;
     line-height: 1.5;
-    color: #767676;
+    color: #444444;
     border-top: 1px solid #eee;
 }
 
@@ -20,6 +21,8 @@ body{
 
 #alertMsg{    
     position: absolute;
+    top: 50px;
+    right: 150px;
     z-index: 20;
     background:#fff8c4 url('../images/warning.png') no-repeat 10px 50%;
     display: none;
