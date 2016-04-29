@@ -12,43 +12,43 @@
 
     <form action="<?php $this->link(['action' => 'saveParametrs']) ?>" method="POST">
         <div class="tab-content">
-            <div id="home" class="tab-pane fade in active"> 
+            <div id="home" class="tab-pane fade in active">
+                
                 <div class="row">
                     <div class="col-sm-3"> 
                         <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITA [m2/s] (EDITABLE)</label>
                         <input class="form-control input-sm" type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']) ?>" readonly>
                     </div>
-                    <div class="col-sm-3"> 
+                    <div class="col-sm-2"> 
                         <br>
                         <div class="btn btn-default" id="button" onclick='analysisTrans();'>
                             URČI TRANSMISIVITU
                         </div>
                     </div>
+
+                    <div class="col-sm-2">
+                        <br>
+                        <div class="btn btn-warning btn-sm" id="button" onclick='delAnalysisInput();'>ZNOVU</div>
+                    </div> 
                 </div>
+
                 <div class="row">
                     <div class="col-sm-3">
                         <label class="small" for='STORATIVITY'>STORATIVITA [] (EDITABLE)</label>
                         <input class="form-control input-sm" id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']) ?>" readonly>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <br>
                         <div class="btn btn-default" id="button" onclick='analysisStor();'>
                             URČI STORATIVITU
                         </div>
                     </div>
-                </div>
-
-                <br>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="btn btn-warning btn-sm" id="button" onclick='delAnalysisInput();'>ZNOVU</div>
-
-                    </div>
-                    <div class="col-sm-3">
-                        <input class="btn btn-success" type="submit" value="ULOŽ PARAMETRY">
+                    <div class="col-sm-2">
+                        <br>
+                        <input class="btn btn-primary" type="submit" value="ULOŽ PARAMETRY">
                     </div>
                 </div>
+                
             </div>
 
             <div id="menu1" class="tab-pane fade">

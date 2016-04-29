@@ -19,7 +19,7 @@
                                 <li><a href="<?php $this->link(['core' => 'jacob']); ?>">Jacob. metoda</a></li>
                                 <li><a href="<?php $this->link(['core' => 'theis']); ?>">Theis metoda</a></li>
                                 <li><a href="<?php $this->link(['core' => 'stehfest']); ?>">Skutečný vrt (Agarwal)</a></li> 
-                                <li><a href="<?php $this->link(['core' => 'pech']); ?>">Dodatečné odpory (Pech)</a></li> 
+                                <li><a href="<?php $this->link(['core' => 'pech']); ?>">Dodatečné odpory</a></li> 
                             </ul>
                         </li>
                     <?php endif; ?>                        

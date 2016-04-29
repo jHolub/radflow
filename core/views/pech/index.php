@@ -1,101 +1,106 @@
-<div class="row">
 
-    <div class="col-sm-3">      
-        <div class="form-group">
-            <label class="small" for='RADIUS_WELL'>POLOMĚR VRTU [m]</label>
-            <input class="form-control input-sm" type="text" id="RADIUS_WELL" name="RADIUS_WELL" value="<?php $this->print_(['sourceData', 'RADIUS_WELL']) ?>" > 
+
+<div class="container">
+    <h3>
+        Vyhodnocení dodatečných odporů
+    </h3>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Výpočet</a></li>
+        <li><a data-toggle="tab" href="#menu1">Parametry</a></li>
+    </ul>
+
+
+
+
+    <div class="tab-content">
+
+
+        <div id="home" class="tab-pane fade in active">
+            <form action="<?php $this->link(['action' => 'saveParametrs']); ?>" method="POST">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label class="small">VLASTNÍ OBJEM VRTU Cd:</label>
+                        <input class="form-control input-sm" id='WELL_STORAGE' name='WELL_STORAGE' type='text' value="<?php $this->print_(['sourceData', 'WELL_STORAGE']) ?>">
+                    </div>
+                    <div class="col-sm-3">   
+                        <br>
+                        <div class="btn btn-default" onclick="solve()">URČI</div>                       
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"> 
+                        <label class="small">DODATEČNÉ ODPORY Wd:</label>
+                        <input class="form-control input-sm" id='SKIN' name='SKIN' type='text' value="<?php $this->print_(['sourceData', 'SKIN']) ?>" >
+                    </div>
+                    <div class="col-sm-3">
+                        <br>
+                        <input class="btn btn-primary" type="submit" value="ULOŽ PARAMETRY">
+                    </div>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="col-sm-3">      
-        <div class="form-group">
-            <label class="small" for='RECHARGE'>ČERPANÉ MNOŽSTVÍ [m3/s]</label>
-            <input class="form-control input-sm" type="text" id="RECHARGE" name="RECHARGE" value="<?php $this->print_(['sourceData', 'RECHARGE']) ?>" > 
-        </div>
-    </div>
-    <div class="col-sm-3">      
-        <div class="form-group">
-            <label class="small" for='TRANSMISSIVITY'>TRANSMISSIVITA [m2/s] </label>
-            <input class="form-control input-sm" type="text" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="<?php $this->print_(['sourceData', 'TRANSMISSIVITY']) ?>" >
-        </div>
-    </div>
-    <div class="col-sm-3">      
-        <div class="form-group">
-            <label class="small" for='STORATIVITY'>STORATIVITA []</label>          
-            <input  class="form-control input-sm" id="STORATIVITY" type="text" name="STORATIVITY" value="<?php $this->print_(['sourceData', 'STORATIVITY']) ?>" > 
+
+        <div id="menu1" class="tab-pane fade">
+
+
+            <div class="row">
+                <div class="col-sm-3">      
+                    <label class="small" for="RADIUS_WELL">POLOMĚR VRTU [m]</label>
+                    <input class="form-control input-sm" id="RADIUS_WELL" name="RADIUS_WELL" value="0.1575" type="text"> 
+                </div>
+                <div class="col-sm-3">      
+                    <label class="small" for="RECHARGE">ČERPANÉ MNOŽSTVÍ [m3/s]</label>
+                    <input class="form-control input-sm" id="RECHARGE" name="RECHARGE" value="0.014" type="text"> 
+                </div>
+                <div class="col-sm-3">      
+                    <label class="small" for="TRANSMISSIVITY">TRANSMISSIVITA [m2/s] </label>
+                    <input class="form-control input-sm" id="TRANSMISSIVITY" name="TRANSMISSIVITY" value="0.00274981" type="text">
+                </div>
+                <div class="col-sm-3">      
+                    <label class="small" for="STORATIVITY">STORATIVITA []</label>          
+                    <input class="form-control input-sm" id="STORATIVITY" name="STORATIVITY" value="0.044134083" type="text"> 
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <label class="small">sd_1:</label>
+                    <input class="form-control input-sm" id='sd_1' name='sd_1' type='text' value="">
+                </div>
+                <div class="col-sm-3">
+                    <label class="small">sd_2</label>
+                    <input class="form-control input-sm" id='sd_2' name='sd_2' type='text' value="" >
+                </div>
+                <div class="col-sm-3">
+                    <label class="small">td_1:</label>
+                    <input class="form-control input-sm" id='td_1' name='td_1' type='text' value="">
+                </div>
+                <div class="col-sm-3">
+                    <label class="small">td_2</label>
+                    <input class="form-control input-sm" id='td_2' name='td_2' type='text' value="" >
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-3">
+                    <label class="small">iz</label>
+                    <input class="form-control input-sm" id='iz' name='iz' type='text' value="" >
+                </div>      
+            </div>
 
         </div>
     </div>
 </div>
 
-<form action="<?php $this->link(['action' => 'saveParametrs']); ?>" method="POST">   
 
-
-    <div class="row">
-        <div class="col-sm-2">      
-            <div class="form-group">
-                <label class="small">sd_1:</label>
-                <input class="form-control input-sm" id='sd_1' name='sd_1' type='text' value="">
-            </div>
-        </div>
-        <div class="col-sm-2">      
-            <div class="form-group">
-                <label class="small">sd_2</label>
-                <input class="form-control input-sm" id='sd_2' name='sd_2' type='text' value="" >
-            </div>
-        </div>
-        <div class="col-sm-2">      
-            <div class="form-group">
-                <label class="small">td_1:</label>
-                <input class="form-control input-sm" id='td_1' name='td_1' type='text' value="">
-            </div>
-        </div>
-        <div class="col-sm-2">      
-            <div class="form-group">
-                <label class="small">td_2</label>
-                <input class="form-control input-sm" id='td_2' name='td_2' type='text' value="" >
-            </div>
-        </div>  
-        <div class="col-sm-2">      
-            <div class="form-group">
-                <label class="small">iz</label>
-                <input class="form-control input-sm" id='iz' name='iz' type='text' value="" >
-            </div>
-        </div>       
-
-    </div>
-
-
-
-
-    <div class="row">
-        <div class="col-sm-3">      
-            <div class="form-group">
-                <label class="small">VLASTNÍ OBJEM VRTU Cd:</label>
-                <input class="form-control input-sm" id='WELL_STORAGE' name='WELL_STORAGE' type='text' value="<?php $this->print_(['sourceData', 'WELL_STORAGE']) ?>">
-            </div>
-        </div>
-        <div class="col-sm-3">      
-            <div class="form-group">
-                <label class="small">DODATEČNÉ ODPORY Wd:</label>
-                <input class="form-control input-sm" id='SKIN' name='SKIN' type='text' value="<?php $this->print_(['sourceData', 'SKIN']) ?>" >
-            </div>
-        </div>
-        <div class="col-sm-3">   
-            <br>
-            <div class="btn btn-default btn-sm " onclick="solve()">URČI</div>
-            <input class="btn btn-primary btn-sm" type="submit" value="ULOŽ PARAMETRY">
-        </div>
-    </div>
-</form> 
+<hr>
 
 
 <div id='border_charts'>
-
-    <div id="chart"></div>
-
+    <div id="chart">        
+    </div>
 </div>
-
-
 
 <script>
 
